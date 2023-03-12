@@ -10436,4 +10436,16 @@ extern const u8 gMailTilemap_Retro[];
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
 
+
+// Custom
+// Battle backgrounds
+
+extern const u32 gBattleAnimBgImage_DarkTerrain[];
+extern const u32 gBattleAnimBgPalette_DarkTerrain[];
+extern const u32 gBattleAnimBgTilemap_DarkTerrain[];
+
+extern const u32 gBattleAnimBgImage_RockyTerrain[];
+extern const u32 gBattleAnimBgPalette_RockyTerrain[];
+extern const u32 gBattleAnimBgTilemap_RockyTerrain[];
+
 #endif //GUARD_GRAPHICS_H
