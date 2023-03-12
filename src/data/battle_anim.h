@@ -1988,6 +1988,6 @@ const struct BattleAnimBackground gBattleAnimBackgroundTable[] =
     [BG_STEEL_BEAM_OPPONENT]       = {gBattleAnimBgImage_Highspeed,               gBattleAnimBgPalette_SteelBeam,               gBattleAnimBgTilemap_HighspeedOpponent},
     [BG_STEEL_BEAM_PLAYER]         = {gBattleAnimBgImage_Highspeed,               gBattleAnimBgPalette_SteelBeam,               gBattleAnimBgTilemap_HighspeedPlayer},
 // Custom
-    [BG_DARK_TERRAIN]         	   = {gBattleAnimBgImage_DarkTerrain,     	      gBattleAnimBgPalette_DarkTerrain,       	    gBattleAnimBgTilemap_DarkTerrain},
+    [BG_DARK_TERRAIN]         	   = {gBattleAnimBgImage_GrassyTerrain,    	      gBattleAnimBgPalette_DarkTerrain,       	    gBattleAnimBgTilemap_GrassyTerrain},
     [BG_ROCKY_TERRAIN]             = {gBattleAnimBgImage_RockyTerrain,       	  gBattleAnimBgPalette_RockyTerrain,       	    gBattleAnimBgTilemap_RockyTerrain},
 };
