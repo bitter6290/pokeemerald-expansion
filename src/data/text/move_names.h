@@ -829,6 +829,16 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_NOXIOUS_TORQUE] = _("Noxious Torque"),
     [MOVE_COMBAT_TORQUE] = _("Combat Torque"),
     [MOVE_MAGICAL_TORQUE] = _("Magical Torque"),
+    
+    // Custom
+    [MOVE_DARK_TERRAIN] = _("Dark Terrain"),
+    [MOVE_ROCKY_TERRAIN] = _("Rocky Terrain"),
+    [MOVE_SOARING_KICK] = _("Soaring Kick"),
+    [MOVE_BOLT_KICK] = _("Bolt Kick"),
+    [MOVE_FROST_KICK] = _("Frost Kick"),
+    [MOVE_PRESSURE_POINT] = _("Pressure Point"),
+    [MOVE_ECTOBLAST] = _("Ectoblast"),
+    [MOVE_STRANGE_SYMPHONY] = _("Strange Symphony"),
 };
 #else
 // 12 letters
@@ -1661,6 +1671,15 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_NOXIOUS_TORQUE] = _("NoxiusTorque"),
     [MOVE_COMBAT_TORQUE] = _("CombatTorque"),
     [MOVE_MAGICAL_TORQUE] = _("MagiclTorque"),
+    // Custom
+    [MOVE_DARK_TERRAIN] = _("Dark Terrain"),
+    [MOVE_ROCKY_TERRAIN] = _("RockyTerrain"),
+    [MOVE_SOARING_KICK] = _("Soaring Kick"),
+    [MOVE_BOLT_KICK] = _("Bolt Kick"),
+    [MOVE_FROST_KICK] = _("Frost Kick"),
+    [MOVE_PRESSURE_POINT] = _("PressurPoint"),
+    [MOVE_ECTOBLAST] = _("Ectoblast"),
+    [MOVE_STRANGE_SYMPHONY] = _("Strange Song"),
 };
 #endif
 

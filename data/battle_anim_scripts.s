@@ -854,6 +854,15 @@ gBattleAnims_Moves::
 	.4byte Move_NOXIOUS_TORQUE
 	.4byte Move_COMBAT_TORQUE
 	.4byte Move_MAGICAL_TORQUE
+@@@@ Custom
+	.4byte Move_ROCKY_TERRAIN
+	.4byte Move_DARK_TERRAIN
+	.4byte Move_SOARING_KICK
+	.4byte Move_BOLT_KICK
+	.4byte Move_FROST_KICK
+	.4byte Move_PRESSURE_POINT
+	.4byte Move_STRANGE_SYMPHONY
+	.4byte Move_ECTOBLAST
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -30782,3 +30791,129 @@ SoulStealingSevenStarStrikeExplosion:
 	launchtemplate gSoulStealExplosionSpriteTemplate 0x83 0x4 0x10 0x10 ANIM_TARGET 0x1
 	delay 0x6
 	return
+
+
+@@@ Custom
+
+Move_ROCKY_TERRAIN:
+	loadspritegfx ANIM_TAG_ORBS @Recover Ball
+	loadspritegfx ANIM_TAG_GREEN_SPARKLE @Green Star
+	loadspritegfx ANIM_TAG_ROCKS @Black color
+	playsewithpan SE_M_HEAL_BELL, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	waitforvisualfinish
+	delay 30
+	createvisualtask AnimTask_BlendMonInAndOut, 5, ANIM_ATTACKER, RGB(20, 10, 5), 12, 5, 1
+	delay 4
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	playsewithpan SE_M_REVERSAL, SOUND_PAN_ATTACKER
+	createsprite gRockyTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 0
+	createsprite gRockyTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 42
+	createsprite gRockyTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 84
+	createsprite gRockyTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 126
+	createsprite gRockyTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 168
+	createsprite gRockyTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 210
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, ANIM_PAL_BG, 3, 0, 4, RGB(20, 10, 5)
+	delay 52
+	setarg 7, 0xFFFF
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 0
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 32
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 64
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 96
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 128
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 160
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 192
+	createsprite gRockyTerrainStarTemplate, ANIM_TARGET, 2, 224
+	loopsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET, 0xa, 0x3
+	waitforvisualfinish
+	delay 4
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, ANIM_PAL_BG, 3, 4, 0, RGB(20, 10, 5)
+	waitforvisualfinish
+	end
+Move_DARK_TERRAIN:
+	loadspritegfx ANIM_TAG_ORBS @Recover Ball
+	loadspritegfx ANIM_TAG_GREEN_SPARKLE @Green Star
+	loadspritegfx ANIM_TAG_BLACK_BALL_2 @Black color
+	playsewithpan SE_M_HEAL_BELL, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	waitforvisualfinish
+	delay 30
+	createvisualtask AnimTask_BlendMonInAndOut, 5, ANIM_ATTACKER, RGB(5,6,7), 12, 5, 1
+	delay 4
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	playsewithpan SE_M_REVERSAL, SOUND_PAN_ATTACKER
+	createsprite gDarkTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 0
+	createsprite gDarkTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 42
+	createsprite gDarkTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 84
+	createsprite gDarkTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 126
+	createsprite gDarkTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 168
+	createsprite gDarkTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 210
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, ANIM_PAL_BG, 3, 0, 4, RGB(4,5,6)
+	delay 52
+	setarg 7, 0xFFFF
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 0
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 32
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 64
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 96
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 128
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 160
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 192
+	createsprite gDarkTerrainStarTemplate, ANIM_TARGET, 2, 224
+	loopsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET, 0xa, 0x3
+	waitforvisualfinish
+	delay 4
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, ANIM_PAL_BG, 3, 4, 0, RGB(4,5,6)
+	waitforvisualfinish
+	end
+Move_SOARING_KICK:
+end @to do
+Move_BOLT_KICK:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_SPARK_2
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_TARGET
+	createsprite gSpinningHandOrFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 1, 30
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 7, RGB_WHITE
+	delay 30
+	playsewithpan SE_M_THUNDERBOLT, SOUND_PAN_TARGET
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 14, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 0, RGB_WHITE
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 31, 3, 1, RGB_BLACK, 8, RGB_BLACK, 0
+	call ElectricityEffect
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+Move_FROST_KICK:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_TARGET
+	createsprite gSpinningHandOrFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 1, 30
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 7, RGB_WHITE
+	delay 30
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 14, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 0, RGB_WHITE
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 31, 3, 1, RGB_BLACK, 8, RGB_BLACK, 0
+	call IceCrystalEffectShort
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+Move_PRESSURE_POINT:
+	end @to do
+Move_STRANGE_SYMPHONY:
+	createvisualtask SoundTask_PlayNormalCry, 0
+	end @to do
+Move_ECTOBLAST:
+	end @to do
