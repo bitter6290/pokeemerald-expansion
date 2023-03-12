@@ -9309,7 +9309,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
     }
     else
     {
-        if (IS_MOVE_PHYSICAL(move))
+        if (IS_MOVE_PHYSICAL(move) || (gBattleMoves[move].type == TYPE_FIRE && gBattleMons[battlerAtk].ability == ABILITY_FIRE_CORE))
         {
             atkStat = gBattleMons[battlerAtk].attack;
             atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
