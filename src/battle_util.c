@@ -2119,6 +2119,8 @@ enum
     ENDTURN_MISTY_TERRAIN,
     ENDTURN_GRASSY_TERRAIN,
     ENDTURN_PSYCHIC_TERRAIN,
+    ENDTURN_DARK_TERRAIN,
+    ENDTURN_ROCKY_TERRAIN,
     ENDTURN_ION_DELUGE,
     ENDTURN_FAIRY_LOCK,
     ENDTURN_RETALIATE,
@@ -2505,6 +2507,14 @@ u8 DoFieldEndTurnEffects(void)
             break;
         case ENDTURN_PSYCHIC_TERRAIN:
             effect = TryEndTerrain(STATUS_FIELD_PSYCHIC_TERRAIN, B_MSG_TERRAINENDS_PSYCHIC);
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_DARK_TERRAIN:
+            effect = TryEndTerrain(STATUS_FIELD_DARK_TERRAIN, B_MSG_TERRAINENDS_DARK);
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_ROCKY_TERRAIN:
+            effect = TryEndTerrain(STATUS_FIELD_ROCKY_TERRAIN, B_MSG_TERRAINENDS_ROCKY);
             gBattleStruct->turnCountersTracker++;
             break;
         case ENDTURN_WATER_SPORT:
@@ -3055,11 +3065,14 @@ u8 DoBattlerEndTurnEffects(void)
                     }
                     else
                     {
-                    #if B_SLEEP_TURNS >= GEN_5
-                        gBattleMons[gActiveBattler].status1 |= ((Random() % 3) + 2);
-                    #else
-                        gBattleMons[gActiveBattler].status1 |= ((Random() % 4) + 3);
-                    #endif
+                    	if (IsBattlerTerrainAffected(gActiveBattler, STATUS_FIELD_DARK_TERRAIN))
+                    		gBattleMons[gActiveBattler].status1 |= 4;
+                    	else
+                   	    #if B_SLEEP_TURNS >= GEN_5
+                            gBattleMons[gActiveBattler].status1 |= ((Random() % 3) + 2);
+                        #else
+                            gBattleMons[gActiveBattler].status1 |= ((Random() % 4) + 3);
+                    	#endif
                         BtlController_EmitSetMonData(BUFFER_A, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
                         MarkBattlerForControllerExec(gActiveBattler);
                         BattleScriptExecute(BattleScript_YawnMakesAsleep);
@@ -4182,7 +4195,7 @@ static bool32 TryChangeBattleTerrain(u32 battler, u32 statusFlag, u8 *timer)
 {
     if (!(gFieldStatuses & statusFlag))
     {
-        gFieldStatuses &= ~(STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN);
+        gFieldStatuses &= ~(STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN | STATUS_FIELD_ROCKY_TERRAIN | STATUS_FIELD_DARK_TERRAIN);
         gFieldStatuses |= statusFlag;
 
         if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_TERRAIN_EXTENDER)
@@ -4312,6 +4325,10 @@ bool8 ChangeTypeBasedOnTerrain(u8 battlerId)
         battlerType = TYPE_FAIRY;
     else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
         battlerType = TYPE_PSYCHIC;
+    else if (gFieldStatuses & STATUS_FIELD_DARK_TERRAIN)
+        battlerType = TYPE_DARK;
+    else if (gFieldStatuses & STATUS_FIELD_ROCKY_TERRAIN)
+        battlerType = TYPE_ROCK;
     else // failsafe
         return FALSE;
 
@@ -4399,7 +4416,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 case STATUS_FIELD_PSYCHIC_TERRAIN:
                     gBattleCommunication[MULTISTRING_CHOOSER] = 3;
                     break;
+                case STATUS_FIELD_DARK_TERRAIN:
+                    gBattleCommunication[MULTISTRING_CHOOSER] = 4;
+                    break;
+                case STATUS_FIELD_ROCKY_TERRAIN:
+                    gBattleCommunication[MULTISTRING_CHOOSER] = 5;
+                    break;
                 }
+                
 
                 BattleScriptPushCursorAndCallback(BattleScript_OverworldTerrain);
                 effect++;
@@ -9164,6 +9188,8 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
         MulModifier(&modifier, TERRAIN_TYPE_BOOST);
     if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN && moveType == TYPE_PSYCHIC && IsBattlerGrounded(battlerAtk) && !(gStatuses3[battlerAtk] & STATUS3_SEMI_INVULNERABLE))
         MulModifier(&modifier, TERRAIN_TYPE_BOOST);
+    if (gFieldStatuses & STATUS_FIELD_DARK_TERRAIN && (moveType == TYPE_DARK || moveType == TYPE_BUG || moveType == TYPE_GHOST) && IsBattlerGrounded(battlerAtk) && !(gStatuses3[battlerAtk] & STATUS3_SEMI_INVULNERABLE))
+        MulModifier(&modifier, 1.15);
     #if B_SPORT_TURNS >= GEN_6
         if ((moveType == TYPE_ELECTRIC && gFieldStatuses & STATUS_FIELD_MUDSPORT)
             || (moveType == TYPE_FIRE && gFieldStatuses & STATUS_FIELD_WATERSPORT))
@@ -9708,6 +9734,8 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         }
         break;
     }
+    if (IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_ROCKY_TERRAIN) && typeEffectivenessModifier >= UQ_4_12(2.0))
+        MulModifier(&finalModifier, UQ_4_12(0.75));
 
     if (gBattleMoves[move].flags & FLAG_DMG_MINIMIZE    && gStatuses3[battlerDef] & STATUS3_MINIMIZED)
         MulModifier(&finalModifier, UQ_4_12(2.0));
