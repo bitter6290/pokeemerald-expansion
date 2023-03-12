@@ -656,7 +656,10 @@
 #define STRINGID_TERRAINBECOMESDARK					  STRINGID_NEWMECHANICS + 3
 #define STRINGID_TERRAINBECOMESROCKY				  STRINGID_NEWMECHANICS + 4
 
-#define BATTLESTRINGS_COUNT                           STRINGID_TERRAINBECOMESROCKY
+#define LASTSTRINGID_NEWMECHANICS					  STRINGID_TERRAINBECOMESROCKY
+
+
+#define BATTLESTRINGS_COUNT                           LASTSTRINGID_NEWMECHANICS
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
