@@ -3235,6 +3235,37 @@ static const u8 sCombatTorqueDescription[] = _(
 
 static const u8 sMagicalTorqueDescription[] = _(
     "---");
+    
+static const u8 sDarkTerrainDescription[] = _(
+	"Darkness for 5 turns. Helps\n"
+	"Dark, Bug and Ghost.");
+
+static const u8 sRockyTerrainDescription[] = _(
+	"Summons rocks for 5 turns,\n"
+	"slowing non-Rock types.");
+	
+static const u8 sSoaringKickDescription[] = _(
+	"A high-altitude kick that\n"
+	"hits Flying-types.");
+	
+static const u8 sBoltKickDescription[] = _(
+	"An electric kick that\n"
+	"may paralyze.");
+	
+static const u8 sFrostKickDescription[] = _(
+	"An icy kick that may\n"
+	"freeze.");
+	
+static const u8 sEctoblastDescription[] = _(
+	"Channels force to power up\n"
+	"attack, lowering Sp. Def.");
+	
+static const u8 sPressurePointDescription[] = _(
+	"Hits target on Sp. Def.");
+	
+static const u8 sStrangeSymphonyDescription[] = _(
+	"Distracting noise that\n"
+	"may lower Sp. Atk.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"

@@ -5546,9 +5546,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_SKY_UPPERCUT] =
     {
         .effect = EFFECT_SKY_UPPERCUT,
-        .power = 85,
+        .power = 70,
         .type = TYPE_FIGHTING,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -13591,6 +13591,123 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .flags = FLAG_PROTECT_AFFECTED | FLAG_SHEER_FORCE_BOOST,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE
+    },
+
+
+	// Custom
+	
+    [MOVE_ROCKY_TERRAIN] =
+    {
+        .effect = EFFECT_ROCKY_TERRAIN,
+        .power = 0,
+        .type = TYPE_ROCK,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_ATK_UP_1,
+    },
+    [MOVE_DARK_TERRAIN] =
+    {
+        .effect = EFFECT_DARK_TERRAIN,
+        .power = 0,
+        .type = TYPE_DARK,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
+    },
+	
+    [MOVE_SOARING_KICK] =
+    {
+        .effect = EFFECT_SKY_UPPERCUT,
+        .power = 85,
+        .type = TYPE_FIGHTING,
+        .accuracy = 80,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_DMG_IN_AIR,
+        .split = SPLIT_PHYSICAL,
+    },
+    [MOVE_BOLT_KICK]=
+    {
+        .effect = EFFECT_PARALYZE_HIT,
+        .power = 85,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 90,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
+        .split = SPLIT_PHYSICAL,
+    },
+    [MOVE_FROST_KICK]=
+    {
+        .effect = EFFECT_FREEZE_HIT,
+        .power = 85,
+        .type = TYPE_ICE,
+        .accuracy = 90,
+        .pp = 15,
+        .secondaryEffectChance = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
+        .split = SPLIT_PHYSICAL,
+    },
+    [MOVE_PRESSURE_POINT]=
+    {
+        .effect = EFFECT_PRESSUREPOINT,
+        .power = 75,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .split = SPLIT_PHYSICAL,
+    },
+	[MOVE_STRANGE_SYMPHONY] =
+    {
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
+        .power = 60,
+        .type = TYPE_BUG,
+        .accuracy = 95,
+        .pp = 15,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+    [MOVE_ECTOBLAST] =
+    {
+    	.effect = EFFECT_ATTACKER_SPD_DOWN_HIT,
+    	.power = 100,
+    	.type = TYPE_GHOST,
+    	.accuracy = 95,
+    	.pp = 5,
+    	.secondaryEffectChance = 100,
+    	.target = MOVE_TARGET_SELECTED,
+    	.priority = 0,
+    	.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_BALLISTIC,
+    	.split = SPLIT_SPECIAL,
+    	.zMoveEffect = Z_EFFECT_NONE,
     },
 
     // Z-Moves

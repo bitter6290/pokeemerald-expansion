@@ -418,6 +418,10 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectTeatime                 @ EFFECT_TEATIME
 	.4byte BattleScript_EffectAttackUpUserAlly        @ EFFECT_ATTACK_UP_USER_ALLY
 	.4byte BattleScript_EffectShellTrap				  @ EFFECT_SHELL_TRAP
+	.4byte BattleScript_EffectRockyTerrain			  @ EFFECT_ROCKY_TERRAIN
+	.4byte BattleScript_EffectDarkTerrain			  @ EFFECT_DARK_TERRAIN
+	.4byte BattleScript_EffectAttackerSpdDownHit	  @ EFFECT_ATTACKER_SPD_DOWN_HIT
+	.4byte BattleScript_EffectHit					  @ EFFECT_PRESSURE_POINT
 
 BattleScript_EffectAttackUpUserAlly:
 	jumpifnoally BS_ATTACKER, BattleScript_EffectAttackUp
@@ -2576,6 +2580,8 @@ BattleScript_EffectMistyTerrain:
 BattleScript_EffectGrassyTerrain:
 BattleScript_EffectElectricTerrain:
 BattleScript_EffectPsychicTerrain:
+BattleScript_EffectDarkTerrain:
+BattleScript_EffectRockyTerrain:
 	attackcanceler
 	attackstring
 	ppreduce
@@ -10401,3 +10407,7 @@ BattleScript_DarkSurgeActivates::
 	call BattleScript_ActivateTerrainAbilities
 	call BattleScript_TerrainSeedLoop
 	end3
+	
+BattleScript_EffectAttackerSpdDownHit::
+	setmoveeffect MOVE_EFFECT_SP_DEF_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	goto BattleScript_EffectHit
