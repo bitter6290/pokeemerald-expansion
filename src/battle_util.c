@@ -4852,6 +4852,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 effect++;
             }
             break;
+        case ABILITY_ASTRAL_LOCK:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_AnnounceAstralLock);
+                effect++;
+            }
+            break;
         case ABILITY_SCHOOLING:
             if (gBattleMons[battler].level < 20)
                 break;
@@ -6544,7 +6552,7 @@ enum
 
 bool32 IsBattlerTerrainAffected(u8 battlerId, u32 terrainFlag)
 {
-	if (IsAbilityOnField(ABILITY_ASTRAL_LOCK)
+	if (IsAbilityOnField(ABILITY_ASTRAL_LOCK))
 		return FALSE;
     if (!(gFieldStatuses & terrainFlag))
         return FALSE;

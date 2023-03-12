@@ -10374,3 +10374,30 @@ BattleScript_AccelerateActivates::
 	printstring STRINGID_ACCELERATEACTIVATES
 	waitstate
 	end3
+	
+BattleScript_AnnounceAstralLock::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TERRAINLOCK
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_ActivateTerrainAbilities
+	end3
+	
+BattleScript_RockySurgeActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TERRAINBECOMESROCKY
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
+	call BattleScript_ActivateTerrainAbilities
+	call BattleScript_TerrainSeedLoop
+	end3
+
+BattleScript_DarkSurgeActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TERRAINBECOMESDARK
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
+	call BattleScript_ActivateTerrainAbilities
+	call BattleScript_TerrainSeedLoop
+	end3
