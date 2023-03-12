@@ -2024,3 +2024,13 @@ const u16 gFrontierPassCancelButtonHighlighted_Tilemap[] = INCBIN_U16("graphics/
 const u16 gBerryCrush_Crusher_Pal[] = INCBIN_U16("graphics/berry_crush/crusher.gbapal");
 const u32 gBerryCrush_Crusher_Gfx[] = INCBIN_U32("graphics/berry_crush/crusher.4bpp.lz");
 const u32 gBerryCrush_TextWindows_Tilemap[] = INCBIN_U32("graphics/berry_crush/text_windows.bin.lz");
+
+
+// Custom
+const u32 gBattleAnimBgImage_DarkTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/dark_terrain.4bpp.lz");
+const u32 gBattleAnimBgPalette_DarkTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/dark_terrain.gbapal.lz");
+const u32 gBattleAnimBgTilemap_DarkTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/dark_terrain.bin.lz");
+
+const u32 gBattleAnimBgImage_RockyTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/rocky_terrain.4bpp.lz");
+const u32 gBattleAnimBgPalette_RockyTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/rocky_terrain.gbapal.lz");
+const u32 gBattleAnimBgTilemap_RockyTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/rocky_terrain.bin.lz");

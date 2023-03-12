@@ -594,6 +594,8 @@ static const u8 sText_ElectricTerrainEnds[] = _("The electricity disappeared\nfr
 static const u8 sText_MistyTerrainEnds[] = _("The mist disappeared\nfrom the battlefield.");
 static const u8 sText_PsychicTerrainEnds[] = _("The weirdness disappeared\nfrom the battlefield.");
 static const u8 sText_GrassyTerrainEnds[] = _("The grass disappeared\nfrom the battlefield.");
+static const u8 sText_DarkTerrainEnds[] = _("The darkness lifted from the battlefield.");
+static const u8 sText_RockyTerrainEnds[] = _("The rocks disappeared from the battlefield.");
 static const u8 sText_TargetsStatWasMaxedOut[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY} maxed\nits {B_BUFF1}!");
 static const u8 sText_PoisonHealHpUp[] = _("The poisoning healed {B_ATK_NAME_WITH_PREFIX}\na little bit!");
 static const u8 sText_BadDreamsDmg[] = _("{B_DEF_NAME_WITH_PREFIX} is tormented!");
@@ -643,6 +645,8 @@ static const u8 sText_TerrainBecomesMisty[] = _("Mist swirled about\nthe battlef
 static const u8 sText_TerrainBecomesGrassy[] = _("Grass grew to cover\nthe battlefield!");
 static const u8 sText_TerrainBecomesElectric[] = _("An electric current runs across\nthe battlefield!");
 static const u8 sText_TerrainBecomesPsychic[] = _("The battlefield got weird!");
+static const u8 sText_TerrainBecomesDark[] = _("The battlefield grew dark!");
+static const u8 sText_TerrainBecomesRocky[] = _("Rocks covered the battlefield!");
 static const u8 sText_TargetElectrified[] = _("The {B_DEF_NAME_WITH_PREFIX}'s moves\nhave been electrified!");
 static const u8 sText_AssaultVestDoesntAllow[] = _("{B_LAST_ITEM}'s effects prevent\nstatus moves from being used!\p");
 static const u8 sText_GravityPreventsUsage[] = _("{B_ATK_NAME_WITH_PREFIX} can't use {B_CURRENT_MOVE}\nbecause of gravity!\p");
@@ -782,6 +786,11 @@ static const u8 sText_PrepareShellTrap[] = _("{B_ATK_NAME_WITH_PREFIX} set a she
 static const u8 sText_ShellTrapDidntWork[] = _("{B_ATK_NAME_WITH_PREFIX}'s shell trap didn't work!");
 static const u8 sText_CouldntFullyProtect[] = _("{B_DEF_NAME_WITH_PREFIX} couldn't fully protect\nitself and got hurt!");
 static const u8 sText_StockpiledEffectWoreOff[] = _("{B_ATK_NAME_WITH_PREFIX}'s stockpiled\neffect wore off!");
+
+//custom
+static const u8 sText_StasisActivates[] = _("All battlefield effects were\nextended by 1 turn!");
+static const u8 sText_AccelerateActivates[] = _("All battlefield effects were\nshortened by 1 turn!");
+static const u8 sText_AstralLockActivates[] = _("The effects of terrain\ndisappeared.");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1328,6 +1337,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_MISTYTERRAINENDS - BATTLESTRINGS_TABLE_START] = sText_MistyTerrainEnds,
     [STRINGID_PSYCHICTERRAINENDS - BATTLESTRINGS_TABLE_START] = sText_PsychicTerrainEnds,
     [STRINGID_GRASSYTERRAINENDS - BATTLESTRINGS_TABLE_START] = sText_GrassyTerrainEnds,
+    [STRINGID_DARKTERRAINENDS - BATTLESTRINGS_TABLE_START] = sText_DarkTerrainEnds,
+    [STRINGID_ROCKYTERRAINENDS - BATTLESTRINGS_TABLE_START] = sText_RockyTerrainEnds,
     [STRINGID_TARGETABILITYSTATRAISE - BATTLESTRINGS_TABLE_START] = sText_TargetAbilityRaisedStat,
     [STRINGID_TARGETSSTATWASMAXEDOUT - BATTLESTRINGS_TABLE_START] = sText_TargetsStatWasMaxedOut,
     [STRINGID_ATTACKERABILITYSTATRAISE - BATTLESTRINGS_TABLE_START] = sText_AttackerAbilityRaisedStat,
@@ -1383,6 +1394,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_TERRAINBECOMESGRASSY - BATTLESTRINGS_TABLE_START] = sText_TerrainBecomesGrassy,
     [STRINGID_TERRAINBECOMESELECTRIC - BATTLESTRINGS_TABLE_START] = sText_TerrainBecomesElectric,
     [STRINGID_TERRAINBECOMESPSYCHIC - BATTLESTRINGS_TABLE_START] = sText_TerrainBecomesPsychic,
+    [STRINGID_TERRAINBECOMESDARK - BATTLESTRINGS_TABLE_START] = sText_TerrainBecomesDark,
+    [STRINGID_TERRAINBECOMESROCKY - BATTLESTRINGS_TABLE_START] = sText_TerrainBecomesRocky,
     [STRINGID_TARGETELECTRIFIED - BATTLESTRINGS_TABLE_START] = sText_TargetElectrified,
     [STRINGID_MEGAEVOREACTING - BATTLESTRINGS_TABLE_START] = sText_MegaEvoReacting,
     [STRINGID_FERVENTWISHREACHED - BATTLESTRINGS_TABLE_START] = sText_FerventWishReached,
@@ -1420,6 +1433,11 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_TARGETTOOHEAVY - BATTLESTRINGS_TABLE_START] = sText_TargetTooHeavy,
     [STRINGID_ATTACKERLOSTELECTRICTYPE - BATTLESTRINGS_TABLE_START] = sText_AttackerLostElectricType,
     [STRINGID_PKMNSABILITYPREVENTSABILITY - BATTLESTRINGS_TABLE_START] = sText_PkmnsAbilityPreventsAbility,
+    
+	//custom
+	[STRINGID_TERRAINLOCK - BATTLESTRINGS_TABLE_START] = sText_AstralLockActivates,
+	[STRINGID_STASISACTIVATES - BATTLESTRINGS_TABLE_START] = sText_StasisActivates,
+	[STRINGID_ACCELERATEACTIVATES - BATTLESTRINGS_TABLE_START] = sText_AccelerateActivates,
 };
 
 const u16 gZEffectStringIds[] =
@@ -1454,6 +1472,8 @@ const u16 gTerrainEndingStringIds[B_MSG_TERRAINENDS_COUNT] =
     [B_MSG_TERRAINENDS_ELECTRIC] = STRINGID_ELECTRICTERRAINENDS,
     [B_MSG_TERRAINENDS_PSYCHIC] = STRINGID_PSYCHICTERRAINENDS,
     [B_MSG_TERRAINENDS_GRASS] = STRINGID_GRASSYTERRAINENDS,
+    [B_MSG_TERRAINENDS_DARK] = STRINGID_DARKTERRAINENDS,
+    [B_MSG_TERRAINENDS_ROCKY] = STRINGID_ROCKYTERRAINENDS,
 };
 
 const u16 gTerrainPreventsStringIds[] =
