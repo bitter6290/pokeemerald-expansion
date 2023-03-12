@@ -460,6 +460,10 @@ extern const u8 BattleScript_ShellTrapSetUp[];
 extern const u8 BattleScript_CouldntFullyProtect[];
 extern const u8 BattleScript_MoveEffectStockpileWoreOff[];
 
+// new
+extern const u8 BattleScript_AccelerateActivates[];
+extern const u8 BattleScript_StasisActivates[];
+
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];
 extern const u8 BattleScript_ZMoveActivateStatus[];

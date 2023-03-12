@@ -10324,6 +10324,9 @@ BattleScript_NeutralizingGasExitsLoop:
 	restoretarget
 	return
 
+
+
+
 BattleScript_MagicianActivates::
 	call BattleScript_AbilityPopUp
 	call BattleScript_ItemSteal
@@ -10357,3 +10360,17 @@ BattleScript_CouldntFullyProtect::
 	printstring STRINGID_COULDNTFULLYPROTECT
 	waitmessage B_WAIT_TIME_LONG
 	return
+	
+	
+	
+BattleScript_StasisActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_STASISACTIVATES
+	waitstate
+	end3
+	
+BattleScript_AccelerateActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_ACCELERATEACTIVATES
+	waitstate
+	end3

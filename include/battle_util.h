@@ -213,6 +213,7 @@ u16 GetUsedHeldItem(u8 battler);
 bool32 IsBattlerWeatherAffected(u8 battlerId, u32 weatherFlags);
 u32 GetBattlerMoveTargetType(u8 battlerId, u16 move);
 bool32 CanTargetBattler(u8 battlerAtk, u8 battlerDef, u16 move);
+bool32 TryChangeFieldTimer(bool8 isLengthening, u8 *timer);
 bool8 IsMoveAffectedByParentalBond(u16 move, u8 battlerId);
 // Ability checks
 bool32 IsRolePlayBannedAbilityAtk(u16 ability);
