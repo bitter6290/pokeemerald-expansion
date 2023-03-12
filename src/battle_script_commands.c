@@ -1848,6 +1848,9 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         calc = (calc * 110) / 100; // 1.1 victory star boost
     if (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && GetBattlerAbility(BATTLE_PARTNER(battlerAtk)) == ABILITY_VICTORY_STAR)
         calc = (calc * 110) / 100; // 1.1 ally's victory star boost
+        
+    if (IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_DARK_TERRAIN) && (gBattleMoves[move].type == TYPE_DARK || gBattleMoves[move].type == TYPE_GHOST || gBattleMoves[move].type == TYPE_BUG))
+    	calc = (calc * 115) / 100; // 1.15 dark terrain boost
 
     if (defAbility == ABILITY_SAND_VEIL && WEATHER_HAS_EFFECT && gBattleWeather & B_WEATHER_SANDSTORM)
         calc = (calc * 80) / 100; // 1.2 sand veil loss
@@ -8437,6 +8440,12 @@ static void RemoveAllTerrains(void)
         break;
     case STATUS_FIELD_PSYCHIC_TERRAIN:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAINENDS_PSYCHIC;
+        break;
+    case STATUS_FIELD_DARK_TERRAIN:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAINENDS_DARK;
+        break;
+    case STATUS_FIELD_ROCKY_TERRAIN:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAINENDS_ROCKY;
         break;
     default:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAINENDS_COUNT;  // failsafe

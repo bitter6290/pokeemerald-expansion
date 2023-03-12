@@ -4541,6 +4541,8 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
         speed *= 2;
     if (gBattleResources->flags->flags[battlerId] & RESOURCE_FLAG_UNBURDEN)
         speed *= 2;
+    if (IsBattlerTerrainAffected(battlerId, STATUS_FIELD_ROCKY_TERRAIN) && ~(gBattleMons[battlerId].type1 == TYPE_ROCK || gBattleMons[battlerId].type2 == TYPE_ROCK || gBattleMons[battlerId].type3 == TYPE_ROCK))
+    	speed = (speed * 80) / 100;
 
     // paralysis drop
     if (gBattleMons[battlerId].status1 & STATUS1_PARALYSIS && ability != ABILITY_QUICK_FEET)
