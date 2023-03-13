@@ -8926,6 +8926,11 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             && gBattleWeather & B_WEATHER_SANDSTORM && WEATHER_HAS_EFFECT)
            MulModifier(&modifier, UQ_4_12(1.3));
         break;
+    case ABILITY_SNOW_FORCE:
+        if ((moveType == TYPE_ICE)
+            && gBattleWeather & B_WEATHER_HAIL && WEATHER_HAS_EFFECT)
+           MulModifier(&modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_RIVALRY:
         if (GetGenderFromSpeciesAndPersonality(gBattleMons[battlerAtk].species, gBattleMons[battlerAtk].personality) != MON_GENDERLESS
             && GetGenderFromSpeciesAndPersonality(gBattleMons[battlerDef].species, gBattleMons[battlerDef].personality) != MON_GENDERLESS)
