@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
@@ -69,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 16,
-      "y": 19,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -134,13 +134,6 @@
       "elevation": 3,
       "dest_map": "MAP_MT_CHIMNEY",
       "dest_warp_id": "3"
-    },
-    {
-      "x": 16,
-      "y": 18,
-      "elevation": 0,
-      "dest_map": "MAP_MAGMA_HIDEOUT_1F",
-      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
