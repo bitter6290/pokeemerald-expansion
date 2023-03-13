@@ -12907,5 +12907,54 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_CALYREX_SHADOW_RIDER] = sAnims_Calyrex,
     [SPECIES_ENAMORUS_THERIAN] = sAnims_EnamorusTherian,
 #endif
+// Custom
+	[SPECIES_KRICKALLOUS] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_KRICKETON] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_LEDENNA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_ALOOBAT] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_MORADILE] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_POLTENDULA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_ARIDOSPID] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_FAUVANTIC] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_FLORESTIC] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_TERRANTIC] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_AUREATIC] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_WINTER_PLUME] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_IRON_CORDS] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_SHINX_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_LUXIO_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_LUXRAY_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_TIMBURR_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_GURDURR_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_CONKELDURR_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_LITWICK_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_LAMPENT_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_CHANDELURE_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_TORKOAL_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_SANDYGAST_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_SANDILE_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_KROKOROK_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_SURSKIT_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_MASQUERAIN_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_GIBLE_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_GABITE_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_GARCHOMP_KANTO] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_ARBOK_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_BLASTOISE_MEGA_Y] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_VENUSAUR_MEGA_Y] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_OMASTAR_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_KABUTOPS_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_FLAREON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_VAPOREON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_JOLTEON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_ESPEON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_UMBREON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_LEAFEON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_GLACEON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_SYLVEON_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_CROBAT_MEGA] = sAnims_None,		//!Missing: Needs anim
+	[SPECIES_RAPIDASH_MEGA] = sAnims_None,		//!Missing: Needs anim
+
+// Egg
     [SPECIES_EGG]         = sAnims_Egg,
 };
