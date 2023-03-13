@@ -287,12 +287,13 @@ static const u8 sEarthEaterDescription[] = _("Eats ground to heal HP.");
 static const u8 sMyceliumMightDescription[] = _("Status moves never fail.");
 
 //Custom
-static const u8 sRockySurgeDescription[] = _("Field becomes rocky");
+static const u8 sRockySurgeDescription[] = _("Field becomes rocky.");
 static const u8 sShadeSurgeDescription[] = _("Field becomes dark.");
 static const u8 sAstralLockDescription[] = _("Negates terrain.");
 static const u8 sFireCoreDescription[] = _("All Fire moves use Attack.");
 static const u8 sAccelerateDescription[] = _("Shortens field effects.");
 static const u8 sStasisDescription[] = _("Lengthens field effects.");
+static const u8 sSnowForceDescription[] = _("Powers up in snow.")
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -604,6 +605,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRE_CORE] = _("Fire Core"),
     [ABILITY_STASIS] = _("Stasis"),
     [ABILITY_ACCELERATE] = _("Accelerate"),
+    [ABILITY_SNOW_FORCE] = _("Snow Force"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -915,6 +917,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRE_CORE] = _("Fire Core"),
     [ABILITY_ACCELERATE] = _("Accelerate"),
     [ABILITY_STASIS] = _("Stasis"),
+    [ABILITY_SNOW_FORCE] = _("Snow Force"),
 };
 #endif
 
@@ -1227,4 +1230,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_FIRE_CORE] = sFireCoreDescription,
     [ABILITY_ACCELERATE] = sAccelerateDescription,
     [ABILITY_STASIS] = sStasisDescription,
+    [ABILITY_SNOW_FORCE] = sSnowForceDescription,
 };
