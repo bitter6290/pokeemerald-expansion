@@ -9263,7 +9263,7 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
     if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN && moveType == TYPE_PSYCHIC && IsBattlerGrounded(battlerAtk) && !(gStatuses3[battlerAtk] & STATUS3_SEMI_INVULNERABLE))
         MulModifier(&modifier, TERRAIN_TYPE_BOOST);
     if (gFieldStatuses & STATUS_FIELD_DARK_TERRAIN && (moveType == TYPE_DARK || moveType == TYPE_BUG || moveType == TYPE_GHOST) && IsBattlerGrounded(battlerAtk) && !(gStatuses3[battlerAtk] & STATUS3_SEMI_INVULNERABLE))
-        MulModifier(&modifier, 1.15);
+        MulModifier(&modifier, UQ_4_12(1.15));
     #if B_SPORT_TURNS >= GEN_6
         if ((moveType == TYPE_ELECTRIC && gFieldStatuses & STATUS_FIELD_MUDSPORT)
             || (moveType == TYPE_FIRE && gFieldStatuses & STATUS_FIELD_WATERSPORT))
