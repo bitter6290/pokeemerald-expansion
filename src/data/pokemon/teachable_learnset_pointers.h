@@ -1334,6 +1334,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexShadowRiderTeachableLearnset,
     // Enamorus
     [SPECIES_ENAMORUS_THERIAN] = sEnamorusTeachableLearnset,
+    [SPECIES_BASCULEGION_FEMALE] = sBasculegionTeachableLearnset,
 #endif
 	// Custom
 	[SPECIES_KRICKALLOUS] = sKrickallousTeachableLearnset,

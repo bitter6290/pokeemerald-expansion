@@ -1337,6 +1337,8 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_CALYREX_ICE_RIDER]            = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
     [SPECIES_CALYREX_SHADOW_RIDER]         = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
     [SPECIES_ENAMORUS_THERIAN]             = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    // Basculegion
+    [SPECIES_BASCULEGION_FEMALE]           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
 	// Custom
 	[SPECIES_KRICKALLOUS]					= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
