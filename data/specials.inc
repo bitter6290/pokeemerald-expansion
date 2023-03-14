@@ -234,11 +234,7 @@ gSpecials::
 	def_special BufferMoveDeleterNicknameAndMove
 	def_special GetNumMovesSelectedMonHas
 	def_special TeachMoveRelearnerMove
-	def_special GetRecordedCyclingRoadResults
-	def_special Special_BeginCyclingRoadChallenge
 	def_special GetPlayerAvatarBike
-	def_special FinishCyclingRoadChallenge
-	def_special UpdateCyclingRoadState
 	def_special GetLeadMonFriendshipScore
 	def_special CallFrontierUtilFunc
 	def_special CallBattleTowerFunc

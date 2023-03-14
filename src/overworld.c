@@ -425,7 +425,6 @@ static void UpdateMiscOverworldStates(void)
 {
     FlagClear(FLAG_SYS_SAFARI_MODE);
     ChooseAmbientCrySpecies();
-    ResetCyclingRoadChallengeData();
     UpdateLocationHistoryForRoamer();
     RoamerMoveToOtherLocationSet();
 }
@@ -804,7 +803,6 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     LoadObjEventTemplatesFromHeader();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
-    ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
     TryUpdateRandomTrainerRematches(mapGroup, mapNum);
     DoTimeBasedEvents();
@@ -854,7 +852,6 @@ static void LoadMapFromWarp(bool32 a1)
     CheckLeftFriendsSecretBase();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
-    ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
     TryUpdateRandomTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     if (a1 != TRUE)
@@ -1060,19 +1057,6 @@ static bool16 NoMusicInSotopolisWithLegendaries(struct WarpData *warp)
         return FALSE;
 }
 
-static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
-{
-    if (VarGet(VAR_WEATHER_INSTITUTE_STATE))
-        return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F))
-        return FALSE;
-    else if (warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_1F)
-     || warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_2F))
-        return TRUE;
-    else
-        return FALSE;
-}
-
 static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
 {
     if (VarGet(VAR_MOSSDEEP_CITY_STATE) == 0)
@@ -1095,8 +1079,6 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ABNORMAL_WEATHER;
     else if (IsInflitratedSpaceCenter(warp) == TRUE)
         return MUS_ENCOUNTER_MAGMA;
-    else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
-        return MUS_MT_CHIMNEY;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }

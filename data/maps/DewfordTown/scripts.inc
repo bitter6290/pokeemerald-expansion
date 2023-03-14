@@ -147,7 +147,6 @@ DewfordTown_EventScript_SailToPetalburg::
 	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 2
 	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
-	warp MAP_ROUTE104_MR_BRINEYS_HOUSE, 5, 4
 	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
 	waitstate
 	release

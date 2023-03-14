@@ -17,22 +17,9 @@
     "gMapGroup_IndoorMossdeep",
     "gMapGroup_IndoorSootopolis",
     "gMapGroup_IndoorEverGrande",
-    "gMapGroup_IndoorRoute104",
-    "gMapGroup_IndoorRoute111",
-    "gMapGroup_IndoorRoute114",
-    "gMapGroup_IndoorRoute116",
-    "gMapGroup_IndoorRoute117",
-    "gMapGroup_IndoorRoute121",
     "gMapGroup_Dungeons",
     "gMapGroup_IndoorDynamic",
-    "gMapGroup_SpecialArea",
-    "gMapGroup_IndoorRoute104Prototype",
-    "gMapGroup_IndoorRoute109",
-    "gMapGroup_IndoorRoute110",
-    "gMapGroup_IndoorRoute113",
-    "gMapGroup_IndoorRoute123",
-    "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124"
+    "gMapGroup_SpecialArea"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -60,7 +47,6 @@
     "Route107",
     "Route108",
     "Route109",
-    "Route110",
     "Route111",
     "Route112",
     "Route113",
@@ -292,28 +278,6 @@
     "EverGrandeCity_PokemonCenter_2F",
     "EverGrandeCity_PokemonLeague_2F"
   ],
-  "gMapGroup_IndoorRoute104": [
-    "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop"
-  ],
-  "gMapGroup_IndoorRoute111": [
-    "Route111_WinstrateFamilysHouse",
-    "Route111_OldLadysRestStop"
-  ],
-  "gMapGroup_IndoorRoute114": [
-    "Route114_FossilManiacsHouse",
-    "Route114_FossilManiacsTunnel",
-    "Route114_LanettesHouse"
-  ],
-  "gMapGroup_IndoorRoute116": [
-    "Route116_TunnelersRestHouse"
-  ],
-  "gMapGroup_IndoorRoute117": [
-    "Route117_PokemonDayCare"
-  ],
-  "gMapGroup_IndoorRoute121": [
-    "Route121_SafariZoneEntrance"
-  ],
   "gMapGroup_Dungeons": [
     "Underwater_SootopolisCity",
     "DesertRuins",
@@ -453,41 +417,5 @@
     "TrainerHill_4F",
     "TrainerHill_Roof",
     "TrainerHill_Elevator"
-  ],
-  "gMapGroup_IndoorRoute104Prototype": [
-    "Route104_Prototype",
-    "Route104_PrototypePrettyPetalFlowerShop"
-  ],
-  "gMapGroup_IndoorRoute109": [
-    "Route109_SeashoreHouse"
-  ],
-  "gMapGroup_IndoorRoute110": [
-    "Route110_TrickHouseEntrance",
-    "Route110_TrickHouseEnd",
-    "Route110_TrickHouseCorridor",
-    "Route110_TrickHousePuzzle1",
-    "Route110_TrickHousePuzzle2",
-    "Route110_TrickHousePuzzle3",
-    "Route110_TrickHousePuzzle4",
-    "Route110_TrickHousePuzzle5",
-    "Route110_TrickHousePuzzle6",
-    "Route110_TrickHousePuzzle7",
-    "Route110_TrickHousePuzzle8",
-    "Route110_SeasideCyclingRoadNorthEntrance",
-    "Route110_SeasideCyclingRoadSouthEntrance"
-  ],
-  "gMapGroup_IndoorRoute113": [
-    "Route113_GlassWorkshop"
-  ],
-  "gMapGroup_IndoorRoute123": [
-    "Route123_BerryMastersHouse"
-  ],
-  "gMapGroup_IndoorRoute119": [
-    "Route119_WeatherInstitute_1F",
-    "Route119_WeatherInstitute_2F",
-    "Route119_House"
-  ],
-  "gMapGroup_IndoorRoute124": [
-    "Route124_DivingTreasureHuntersHouse"
   ]
 }
