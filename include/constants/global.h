@@ -51,9 +51,9 @@
 #define DAYCARE_MON_COUNT 2
 #define POKEBLOCKS_COUNT 40
 #define OBJECT_EVENTS_COUNT 16
-#define MAIL_COUNT (10 + PARTY_SIZE)
-#define SECRET_BASES_COUNT 20
-#define TV_SHOWS_COUNT 25
+#define MAIL_COUNT (1 + PARTY_SIZE)
+#define SECRET_BASES_COUNT 1
+#define TV_SHOWS_COUNT 2
 #define POKE_NEWS_COUNT 16
 #define PC_ITEMS_COUNT 50
 #define BAG_ITEMS_COUNT 30
@@ -78,7 +78,7 @@
 // Excludes link modes. See RANKING_HALL_* in include/constants/battle_frontier.h
 #define HALL_FACILITIES_COUNT 9
 // Received via record mixing, 1 for each player other than yourself
-#define HALL_RECORDS_COUNT 3
+#define HALL_RECORDS_COUNT 1
 
 // Battle Frontier level modes.
 #define FRONTIER_LVL_50         0
