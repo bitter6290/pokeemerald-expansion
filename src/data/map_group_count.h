@@ -1,1 +1,1 @@
-static const u8 MAP_GROUP_COUNT[] = {56, 5, 5, 6, 7, 8, 9, 7, 7, 13, 8, 17, 10, 22, 13, 15, 15, 13, 58, 63, 0};
+static const u8 MAP_GROUP_COUNT[] = {57, 61, 0};

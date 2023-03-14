@@ -34,7 +34,6 @@
 #include "fldeff.h"
 #include "fldeff_misc.h"
 #include "field_control_avatar.h"
-#include "mirage_tower.h"
 #include "field_screen_effect.h"
 #include "data.h"
 #include "constants/battle_frontier.h"
@@ -278,7 +277,6 @@ static void Task_BattleStart(u8 taskId)
         if (!FldEffPoison_IsActive()) // is poison not active?
         {
             BattleTransition_StartOnField(tTransition);
-            ClearMirageTowerPulseBlendEffect();
             tState++; // go to case 1.
         }
         break;
@@ -624,8 +622,6 @@ u8 BattleSetup_GetTerrainId(void)
         if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
             return BATTLE_TERRAIN_WATER;
     }
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE113))
-        return BATTLE_TERRAIN_SAND;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
         return BATTLE_TERRAIN_SAND;
 

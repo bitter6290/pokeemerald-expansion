@@ -12,7 +12,6 @@
 #include "fldeff.h"
 #include "gpu_regs.h"
 #include "main.h"
-#include "mirage_tower.h"
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -2431,7 +2430,6 @@ static void TeleportWarpOutFieldEffect_End(struct Task *task)
     {
         if (task->data[5] == FALSE)
         {
-            ClearMirageTowerPulseBlendEffect();
             task->data[5] = TRUE;
         }
 

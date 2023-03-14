@@ -196,36 +196,12 @@ static const struct {
     u8 level;
     u8 location;
 } sPokeOutbreakSpeciesList[] = {
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
-        .level = 3,
-        .location = MAP_NUM(ROUTE102)
-    },
-    {
-        .species = SPECIES_NUZLEAF,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 15,
-        .location = MAP_NUM(ROUTE114),
-    },
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 13,
-        .location = MAP_NUM(ROUTE117),
-    },
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_GIGA_DRAIN, MOVE_FRUSTRATION, MOVE_SOLAR_BEAM, MOVE_LEECH_SEED},
-        .level = 25,
-        .location = MAP_NUM(ROUTE120),
-    },
-    {
-        .species = SPECIES_SKITTY,
-        .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
-        .level = 8,
-        .location = MAP_NUM(ROUTE116),
-    }
+//     {
+//         .species = SPECIES_SEEDOT,
+//         .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
+//         .level = 3,
+//         .location = MAP_NUM(ROUTE102)
+//     }
 };
 
 static const u16 sGoldSymbolFlags[NUM_FRONTIER_FACILITIES] = {
@@ -837,13 +813,7 @@ void UpdateTVScreensOnMap(int width, int height)
         break;
 //  case PLAYERS_HOUSE_TV_NONE:
     default:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_COVE_LILY_MOTEL_1F)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
-        {
-            // NPC in Lilycove Hotel is always watching TV
-            SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
-        }
-        else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir()))
+        if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir()))
         {
             FlagClear(FLAG_SYS_TV_WATCH);
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
@@ -2657,20 +2627,6 @@ bool8 IsPokeNewsActive(u8 newsKind)
 // For any other type of PokeNews this is always TRUE.
 static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
 {
-    switch (newsKind)
-    {
-    case POKENEWS_SLATEPORT:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SLATEPORT_CITY)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SLATEPORT_CITY)
-         && gSpecialVar_LastTalked == LOCALID_SLATEPORT_ENERGY_GURU)
-            return TRUE;
-        return FALSE;
-    case POKENEWS_LILYCOVE:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP))
-            return TRUE;
-        return FALSE;
-    }
     return TRUE;
 }
 
@@ -3338,80 +3294,11 @@ u32 GetPlayerIDAsU32(void)
 
 u8 CheckForPlayersHouseNews(void)
 {
-    // Check if not in Littleroot house map group
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
-        return PLAYERS_HOUSE_TV_NONE;
-
-    // Check if not in player's house (dependent on gender)
-    if (gSaveBlock2Ptr->playerGender == MALE)
-    {
-        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
-            return PLAYERS_HOUSE_TV_NONE;
-    }
-    else
-    {
-        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(LITTLEROOT_TOWN_MAYS_HOUSE_1F))
-            return PLAYERS_HOUSE_TV_NONE;
-    }
-
-    if (FlagGet(FLAG_SYS_TV_LATIAS_LATIOS) == TRUE)
-        return PLAYERS_HOUSE_TV_LATI;
-
-    if (FlagGet(FLAG_SYS_TV_HOME) == TRUE)
-        return PLAYERS_HOUSE_TV_MOVIE;
-
-    return PLAYERS_HOUSE_TV_LATI;
+    return PLAYERS_HOUSE_TV_NONE;
 }
 
 void GetMomOrDadStringForTVMessage(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
-    {
-        if (gSaveBlock2Ptr->playerGender == MALE)
-        {
-            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
-            {
-                StringCopy(gStringVar1, gText_Mom);
-                VarSet(VAR_TEMP_3, 1);
-            }
-        }
-        else
-        {
-            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(LITTLEROOT_TOWN_MAYS_HOUSE_1F))
-            {
-                StringCopy(gStringVar1, gText_Mom);
-                VarSet(VAR_TEMP_3, 1);
-            }
-        }
-    }
-    if (VarGet(VAR_TEMP_3) == 1)
-    {
-        StringCopy(gStringVar1, gText_Mom);
-    }
-    else if (VarGet(VAR_TEMP_3) == 2)
-    {
-        StringCopy(gStringVar1, gText_Dad);
-    }
-    else if (VarGet(VAR_TEMP_3) > 2)
-    {
-        if (VarGet(VAR_TEMP_3) % 2 == 0)
-            StringCopy(gStringVar1, gText_Mom);
-        else
-            StringCopy(gStringVar1, gText_Dad);
-    }
-    else
-    {
-        if (Random() % 2 != 0)
-        {
-            StringCopy(gStringVar1, gText_Mom);
-            VarSet(VAR_TEMP_3, 1);
-        }
-        else
-        {
-            StringCopy(gStringVar1, gText_Dad);
-            VarSet(VAR_TEMP_3, 2);
-        }
-    }
 }
 
 void HideBattleTowerReporter(void)

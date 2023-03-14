@@ -201,23 +201,6 @@ AbnormalWeather_EventScript_ShowSunEndedMessage::
 	end
 
 AbnormalWeather_EventScript_CleanupMapTiles::
-	switch VAR_ABNORMAL_WEATHER_LOCATION
-	case ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_EventScript_CleanupRoute114North
-	case ABNORMAL_WEATHER_ROUTE_114_SOUTH, AbnormalWeather_EventScript_CleanupRoute114South
-	case ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_EventScript_CleanupRoute115West
-	case ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_CleanupRoute115East
-	case ABNORMAL_WEATHER_ROUTE_116_NORTH, AbnormalWeather_EventScript_CleanupRoute116North
-	case ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_EventScript_CleanupRoute116South
-	case ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_EventScript_CleanupRoute118East
-	case ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_EventScript_CleanupRoute118West
-	case ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_EventScript_CleanupRoute105North
-	case ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_EventScript_CleanupRoute105South
-	case ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_EventScript_CleanupRoute125West
-	case ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_EventScript_CleanupRoute125East
-	case ABNORMAL_WEATHER_ROUTE_127_NORTH, AbnormalWeather_EventScript_CleanupRoute127North
-	case ABNORMAL_WEATHER_ROUTE_127_SOUTH, AbnormalWeather_EventScript_CleanupRoute127South
-	case ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_EventScript_CleanupRoute129West
-	case ABNORMAL_WEATHER_ROUTE_129_EAST, AbnormalWeather_EventScript_CleanupRoute129East
 	return
 
 AbnormalWeather_EventScript_CleanupRoute114North::
@@ -381,45 +364,4 @@ AbnormalWeather_EventScript_CleanupRoute129East::
 	return
 
 AbnormalWeather_Underwater_SetupEscapeWarp::
-	switch VAR_ABNORMAL_WEATHER_LOCATION
-	case ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute105North
-	case ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute105South
-	case ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_Underwater_SetupEscapeWarpRoute125West
-	case ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_Underwater_SetupEscapeWarpRoute125East
-	case ABNORMAL_WEATHER_ROUTE_127_NORTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute127North
-	case ABNORMAL_WEATHER_ROUTE_127_SOUTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute127South
-	case ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_Underwater_SetupEscapeWarpRoute129West
-	case ABNORMAL_WEATHER_ROUTE_129_EAST, AbnormalWeather_Underwater_SetupEscapeWarpRoute129East
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute105North::
-	setescapewarp MAP_ROUTE105, 11, 29
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute105South::
-	setescapewarp MAP_ROUTE105, 21, 54
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute125West::
-	setescapewarp MAP_ROUTE125, 9, 17
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute125East::
-	setescapewarp MAP_ROUTE125, 54, 19
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute127North::
-	setescapewarp MAP_ROUTE127, 58, 10
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute127South::
-	setescapewarp MAP_ROUTE127, 62, 31
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute129West::
-	setescapewarp MAP_ROUTE129, 17, 15
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute129East::
-	setescapewarp MAP_ROUTE129, 43, 20
 	return
