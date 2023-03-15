@@ -62,7 +62,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_SLOWBRO]               = {{EVO_MEGA_EVOLUTION, ITEM_SLOWBRONITE, SPECIES_SLOWBRO_MEGA}},
     [SPECIES_MAGNEMITE]             = {{EVO_LEVEL, 30, SPECIES_MAGNETON}},
 #if P_GEN_4_POKEMON == TRUE
-    [SPECIES_MAGNETON]              = {{EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_MAGNEZONE},
+    [SPECIES_MAGNETON]              = {{EVO_MAPSEC, 0, SPECIES_MAGNEZONE},				//!Missing: Magneton evolution area
                                        {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_MAGNEZONE}},
 #endif
     [SPECIES_DODUO]                 = {{EVO_LEVEL, 31, SPECIES_DODRIO}},
@@ -111,9 +111,9 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_FRIENDSHIP_DAY, 0, SPECIES_ESPEON},
                                        {EVO_FRIENDSHIP_NIGHT, 0, SPECIES_UMBREON},
                                     #if P_GEN_4_POKEMON == TRUE
-                                       {EVO_SPECIFIC_MAP, MAP_PETALBURG_WOODS, SPECIES_LEAFEON},
+                                       {EVO_SPECIFIC_MAP, 0, SPECIES_LEAFEON},
                                        {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LEAFEON},
-                                       {EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_GLACEON},
+                                       {EVO_SPECIFIC_MAP, 0, SPECIES_GLACEON},			//!Missing: Eevee evolution areas
                                        {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON},
                                     #endif
                                     #if P_GEN_6_POKEMON == TRUE
@@ -225,7 +225,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_SKITTY]                = {{EVO_ITEM, ITEM_MOON_STONE, SPECIES_DELCATTY}},
     [SPECIES_BALTOY]                = {{EVO_LEVEL, 36, SPECIES_CLAYDOL}},
 #if P_GEN_4_POKEMON == TRUE
-    [SPECIES_NOSEPASS]              = {{EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_PROBOPASS}},
+    [SPECIES_NOSEPASS]              = {{EVO_MAPSEC, 0, SPECIES_PROBOPASS}},			//!Missing: Nosepass evolution area
 #endif
     [SPECIES_SABLEYE]               = {{EVO_MEGA_EVOLUTION, ITEM_SABLENITE, SPECIES_SABLEYE_MEGA}},
     [SPECIES_BARBOACH]              = {{EVO_LEVEL, 30, SPECIES_WHISCASH}},
@@ -471,9 +471,9 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_TRUMBEAK]              = {{EVO_LEVEL, 28, SPECIES_TOUCANNON}},
     [SPECIES_YUNGOOS]               = {{EVO_LEVEL_DAY, 20, SPECIES_GUMSHOOS}},
     [SPECIES_GRUBBIN]               = {{EVO_LEVEL, 20, SPECIES_CHARJABUG}},
-    [SPECIES_CHARJABUG]             = {{EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_VIKAVOLT},
+    [SPECIES_CHARJABUG]             = {{EVO_MAPSEC, 0, SPECIES_VIKAVOLT},				//!Missing: Charjabug evolution area
                                        {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VIKAVOLT}},
-    [SPECIES_CRABRAWLER]            = {{EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_CRABOMINABLE}},
+    [SPECIES_CRABRAWLER]            = {{EVO_SPECIFIC_MAP, 0, SPECIES_CRABOMINABLE}},	//!Missing: Crabrawler evolution area
     [SPECIES_CUTIEFLY]              = {{EVO_LEVEL, 25, SPECIES_RIBOMBEE}},
     [SPECIES_ROCKRUFF]              = {{EVO_LEVEL_DAY, 25, SPECIES_LYCANROC},
                                        {EVO_LEVEL_NIGHT, 25, SPECIES_LYCANROC_MIDNIGHT}},

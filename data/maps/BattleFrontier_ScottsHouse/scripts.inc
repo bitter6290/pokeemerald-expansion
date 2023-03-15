@@ -13,15 +13,15 @@ BattleFrontier_ScottsHouse_EventScript_Scott::
 	end
 
 BattleFrontier_ScottsHouse_EventScript_CheckGiveItems::
-	goto_if_unset FLAG_SCOTT_GIVES_BATTLE_POINTS, BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier
-	goto_if_unset FLAG_COLLECTED_ALL_SILVER_SYMBOLS, BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols
-	goto_if_unset FLAG_COLLECTED_ALL_GOLD_SYMBOLS, BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols
+	goto_if_unset FLAG_SINK, BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier
+	goto_if_unset FLAG_SINK, BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols
+	goto_if_unset FLAG_SINK, BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols
 	goto BattleFrontier_ScottsHouse_EventScript_CheckGiveShield
 	end
 
 BattleFrontier_ScottsHouse_EventScript_CheckGiveShield::
-	goto_if_unset FLAG_RECEIVED_SILVER_SHIELD, BattleFrontier_ScottsHouse_EventScript_CheckGiveSilverShield
-	goto_if_unset FLAG_RECEIVED_GOLD_SHIELD, BattleFrontier_ScottsHouse_EventScript_CheckGiveGoldShield
+	goto_if_unset FLAG_SINK, BattleFrontier_ScottsHouse_EventScript_CheckGiveSilverShield
+	goto_if_unset FLAG_SINK, BattleFrontier_ScottsHouse_EventScript_CheckGiveGoldShield
 	goto BattleFrontier_ScottsHouse_EventScript_RandomComment
 	end
 
@@ -36,7 +36,7 @@ BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols::
 	msgbox BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols, MSGBOX_DEFAULT
 	giveitem ITEM_LANSAT_BERRY
 	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ScottsHouse_EventScript_BerryPocketFull
-	setflag FLAG_COLLECTED_ALL_SILVER_SYMBOLS
+	setflag FLAG_SINK
 	setflag FLAG_TEMP_4
 	release
 	end
@@ -52,7 +52,7 @@ BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols::
 	msgbox BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols, MSGBOX_DEFAULT
 	giveitem ITEM_STARF_BERRY
 	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ScottsHouse_EventScript_BerryPocketFull
-	setflag FLAG_COLLECTED_ALL_GOLD_SYMBOLS
+	setflag FLAG_SINK
 	setflag FLAG_TEMP_4
 	release
 	end
@@ -100,7 +100,7 @@ BattleFrontier_ScottsHouse_EventScript_GiveSilverShield::
 	msgbox BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow, MSGBOX_DEFAULT
 	givedecoration DECOR_SILVER_SHIELD
 	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ScottsHouse_EventScript_NoRoomForShield
-	setflag FLAG_RECEIVED_SILVER_SHIELD
+	setflag FLAG_SINK
 	setflag FLAG_TEMP_3
 	goto BattleFrontier_ScottsHouse_EventScript_GivenShield
 	end
@@ -130,7 +130,7 @@ BattleFrontier_ScottsHouse_EventScript_GiveGoldShield::
 	msgbox BattleFrontier_ScottsHouse_Text_Beat100TrainersInARow, MSGBOX_DEFAULT
 	givedecoration DECOR_GOLD_SHIELD
 	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ScottsHouse_EventScript_NoRoomForShield
-	setflag FLAG_RECEIVED_GOLD_SHIELD
+	setflag FLAG_SINK
 	setflag FLAG_TEMP_3
 	goto BattleFrontier_ScottsHouse_EventScript_GivenShield
 	end
@@ -186,7 +186,7 @@ BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints::
 	special GiveFrontierBattlePoints
 	msgbox BattleFrontier_ScottsHouse_Text_ObtainedXBattlePoints, MSGBOX_GETPOINTS
 	msgbox BattleFrontier_ScottsHouse_Text_ExplainBattlePoints, MSGBOX_DEFAULT
-	setflag FLAG_SCOTT_GIVES_BATTLE_POINTS
+	setflag FLAG_SINK
 	setflag FLAG_TEMP_2
 	release
 	end
