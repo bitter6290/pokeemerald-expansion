@@ -8363,6 +8363,14 @@ static void HandleTerrainMove(u16 move)
         statusFlag = STATUS_FIELD_PSYCHIC_TERRAIN;
         gBattleCommunication[MULTISTRING_CHOOSER] = 3;
         break;
+    case EFFECT_DARK_TERRAIN:
+    	statusFlag = STATUS_FIELD_DARK_TERRAIN;
+    	gBattleCommunication[MULTISTRING_CHOOSER] = 4;
+    	break;
+    case EFFECT_ROCKY_TERRAIN:
+    	statusFlag = STATUS_FIELD_ROCKY_TERRAIN;
+    	gBattleCommunication[MULTISTRING_CHOOSER] = 5;
+    	break;
     case EFFECT_HIT_SET_REMOVE_TERRAIN:
         switch (gBattleMoves[move].argument)
         {

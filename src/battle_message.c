@@ -787,6 +787,11 @@ static const u8 sText_ShellTrapDidntWork[] = _("{B_ATK_NAME_WITH_PREFIX}'s shell
 static const u8 sText_CouldntFullyProtect[] = _("{B_DEF_NAME_WITH_PREFIX} couldn't fully protect\nitself and got hurt!");
 static const u8 sText_StockpiledEffectWoreOff[] = _("{B_ATK_NAME_WITH_PREFIX}'s stockpiled\neffect wore off!");
 
+//custom
+static const u8 sText_StasisActivates[] = _("All battlefield effects were\nextended by 1 turn!");
+static const u8 sText_AccelerateActivates[] = _("All battlefield effects were\nshortened by 1 turn!");
+static const u8 sText_AstralLockActivates[] = _("The effects of terrain\ndisappeared.");
+
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
     [STRINGID_STOCKPILEDEFFECTWOREOFF - BATTLESTRINGS_TABLE_START] = sText_StockpiledEffectWoreOff,
@@ -1428,6 +1433,11 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_TARGETTOOHEAVY - BATTLESTRINGS_TABLE_START] = sText_TargetTooHeavy,
     [STRINGID_ATTACKERLOSTELECTRICTYPE - BATTLESTRINGS_TABLE_START] = sText_AttackerLostElectricType,
     [STRINGID_PKMNSABILITYPREVENTSABILITY - BATTLESTRINGS_TABLE_START] = sText_PkmnsAbilityPreventsAbility,
+    
+	//custom
+	[STRINGID_TERRAINLOCK - BATTLESTRINGS_TABLE_START] = sText_AstralLockActivates,
+	[STRINGID_STASISACTIVATES - BATTLESTRINGS_TABLE_START] = sText_StasisActivates,
+	[STRINGID_ACCELERATEACTIVATES - BATTLESTRINGS_TABLE_START] = sText_AccelerateActivates,
 };
 
 const u16 gZEffectStringIds[] =

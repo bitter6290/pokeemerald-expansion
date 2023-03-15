@@ -4210,6 +4210,28 @@ static bool32 TryChangeBattleTerrain(u32 battler, u32 statusFlag, u8 *timer)
     return FALSE;
 }
 
+static bool32 TryChangeFieldTimer(bool8 isLengthening, u8 *timer)
+{
+	if(isLengthening){
+		if(*timer == 0)
+			return FALSE;
+		else
+		{
+			(*timer)++;
+			return TRUE;
+		}
+	}
+	else{
+		if(*timer < 2)
+			return FALSE;
+		else
+		{
+			(*timer)--;
+			return TRUE;
+		}
+	}
+}
+
 static bool32 ShouldChangeFormHpBased(u32 battler)
 {
     // Ability,     form >, form <=, hp divided
@@ -4790,6 +4812,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 effect++;
             }
             break;
+        case ABILITY_SHADE_SURGE:
+            if (TryChangeBattleTerrain(battler, STATUS_FIELD_DARK_TERRAIN, &gFieldTimers.terrainTimer))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_DarkSurgeActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_ROCKY_SURGE:
+            if (TryChangeBattleTerrain(battler, STATUS_FIELD_ROCKY_TERRAIN, &gFieldTimers.terrainTimer))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_RockySurgeActivates);
+                effect++;
+            }
+            break;
         case ABILITY_INTIMIDATE:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -4813,6 +4849,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             {
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 BattleScriptPushCursorAndCallback(BattleScript_AnnounceAirLockCloudNine);
+                effect++;
+            }
+            break;
+        case ABILITY_ASTRAL_LOCK:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_AnnounceAstralLock);
                 effect++;
             }
             break;
@@ -4931,6 +4975,34 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 gBattlerTarget = BATTLE_PARTNER(battler);
                 BattleScriptPushCursorAndCallback(BattleScript_CostarActivates);
                 effect++;
+            }
+            break;
+        case ABILITY_STASIS:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+            	if(TryChangeFieldTimer(TRUE, &gFieldTimers.terrainTimer) || TryChangeFieldTimer(TRUE, &gFieldTimers.waterSportTimer)
+            	 || TryChangeFieldTimer(TRUE, &gFieldTimers.mudSportTimer) || TryChangeFieldTimer(TRUE, &gFieldTimers.wonderRoomTimer)
+            	 || TryChangeFieldTimer(TRUE, &gFieldTimers.magicRoomTimer) || TryChangeFieldTimer(TRUE, &gFieldTimers.trickRoomTimer)
+            	 || TryChangeFieldTimer(TRUE, &gFieldTimers.gravityTimer))
+            	{
+            		BattleScriptPushCursorAndCallback(BattleScript_StasisActivates);
+            		effect++;
+            	}
+				gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+            }
+            break;
+        case ABILITY_ACCELERATE:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+            	if(TryChangeFieldTimer(FALSE, &gFieldTimers.terrainTimer) || TryChangeFieldTimer(FALSE, &gFieldTimers.waterSportTimer)
+            	 || TryChangeFieldTimer(FALSE, &gFieldTimers.mudSportTimer) || TryChangeFieldTimer(FALSE, &gFieldTimers.wonderRoomTimer)
+            	 || TryChangeFieldTimer(FALSE, &gFieldTimers.magicRoomTimer) || TryChangeFieldTimer(FALSE, &gFieldTimers.trickRoomTimer)
+            	 || TryChangeFieldTimer(FALSE, &gFieldTimers.gravityTimer))
+            	{
+            		BattleScriptPushCursorAndCallback(BattleScript_AccelerateActivates);
+            		effect++;
+            	}
+				gSpecialStatuses[battler].switchInAbilityDone = TRUE;
             }
             break;
 #if B_WEATHER_FORMS < GEN_5
@@ -6480,6 +6552,8 @@ enum
 
 bool32 IsBattlerTerrainAffected(u8 battlerId, u32 terrainFlag)
 {
+	if (IsAbilityOnField(ABILITY_ASTRAL_LOCK))
+		return FALSE;
     if (!(gFieldStatuses & terrainFlag))
         return FALSE;
     else if (gStatuses3[battlerId] & STATUS3_SEMI_INVULNERABLE)
@@ -8852,6 +8926,11 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             && gBattleWeather & B_WEATHER_SANDSTORM && WEATHER_HAS_EFFECT)
            MulModifier(&modifier, UQ_4_12(1.3));
         break;
+    case ABILITY_SNOW_FORCE:
+        if ((moveType == TYPE_ICE)
+            && gBattleWeather & B_WEATHER_HAIL && WEATHER_HAS_EFFECT)
+           MulModifier(&modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_RIVALRY:
         if (GetGenderFromSpeciesAndPersonality(gBattleMons[battlerAtk].species, gBattleMons[battlerAtk].personality) != MON_GENDERLESS
             && GetGenderFromSpeciesAndPersonality(gBattleMons[battlerDef].species, gBattleMons[battlerDef].personality) != MON_GENDERLESS)
@@ -9235,7 +9314,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
     }
     else
     {
-        if (IS_MOVE_PHYSICAL(move))
+        if (IS_MOVE_PHYSICAL(move) || (gBattleMoves[move].type == TYPE_FIRE && gBattleMons[battlerAtk].ability == ABILITY_FIRE_CORE))
         {
             atkStat = gBattleMons[battlerAtk].attack;
             atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
@@ -9435,7 +9514,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
         spDef = gBattleMons[battlerDef].spDefense;
     }
 
-    if (gBattleMoves[move].effect == EFFECT_PSYSHOCK || IS_MOVE_PHYSICAL(move)) // uses defense stat instead of sp.def
+    if (gBattleMoves[move].effect == EFFECT_PSYSHOCK || (IS_MOVE_PHYSICAL(move) && !(gBattleMoves[move].effect == EFFECT_PRESSUREPOINT))) // uses defense stat instead of sp.def
     {
         defStat = def;
         defStage = gBattleMons[battlerDef].statStages[STAT_DEF];
@@ -9827,6 +9906,8 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
     if (moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gStatuses3[battlerDef] & STATUS3_MIRACLE_EYED && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (gBattleMoves[move].effect == EFFECT_FREEZE_DRY && defType == TYPE_WATER)
+        mod = UQ_4_12(2.0);
+    if (gBattleMoves[move].effect == EFFECT_SKY_UPPERCUT && defType == TYPE_FLYING)
         mod = UQ_4_12(2.0);
     if (moveType == TYPE_GROUND && defType == TYPE_FLYING && IsBattlerGrounded(battlerDef) && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);

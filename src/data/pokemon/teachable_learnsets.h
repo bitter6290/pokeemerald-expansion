@@ -33541,3 +33541,129 @@ static const u16 sCalyrexShadowRiderTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif
+
+// Custom
+
+static const u16 sKrickallousTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sKricketonTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sLedennaTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sAloobatTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sMoradileTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sPoltendulaTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sAridospidTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sFauvanticTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sFloresticTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sTerranticTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sAureaticTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sWinterPlumeTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sIronCordsTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sShinxKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sLuxioKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sLuxrayKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sTimburrKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sGurdurrKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sConkeldurrKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sLitwickKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sLampentKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sChandelureKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sTorkoalKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sSandygastKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sSandileKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sKrokorokKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sSurskitKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sMasquerainKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sGibleKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sGabiteKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
+
+static const u16 sGarchompKantoTeachableLearnset[] = {
+	MOVE_UNAVAILABLE
+};		 //!Missing: Needs teachable learnset
