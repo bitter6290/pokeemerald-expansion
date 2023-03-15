@@ -1174,7 +1174,7 @@ static u16 GetTerraOrMarineCaveMapSecId(void)
 {
     s16 idx;
 
-    idx = VarGet(VAR_ABNORMAL_WEATHER_LOCATION) - 1;
+    idx = VarGet(VAR_SINK) - 1;
 
     if (idx < 0 || idx > ABNORMAL_WEATHER_LOCATIONS - 1)
         idx = 0;
@@ -1186,7 +1186,7 @@ static void GetMarineCaveCoords(u16 *x, u16 *y)
 {
     u16 idx;
 
-    idx = VarGet(VAR_ABNORMAL_WEATHER_LOCATION);
+    idx = VarGet(VAR_SINK);
     if (idx < MARINE_CAVE_LOCATIONS_START || idx > ABNORMAL_WEATHER_LOCATIONS)
     {
         idx = MARINE_CAVE_LOCATIONS_START;

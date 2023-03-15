@@ -16,17 +16,7 @@ Debug_CheatStart::
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
 	setflag FLAG_SYS_B_DASH
-	setvar VAR_LITTLEROOT_TOWN_STATE, 4 @ 4: Received Running Shoes
-	setvar VAR_LITTLEROOT_INTRO_STATE, 7 @ 7: Told to go meet rival
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2 @ 2: Met Rival's Mom (and is corresponding gender)
-	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 2 @ 2: Met Rival's Mom (and is corresponding gender)
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 4 @ 4: Received Pokedex
 	additem ITEM_ACRO_BIKE
-	setvar VAR_BRINEY_HOUSE_STATE, 1
-	setvar VAR_ROUTE116_STATE, 2
-	setflag FLAG_SINK
-	clearflag FLAG_SINK
-	clearflag FLAG_SINK
 	release
 	end
 

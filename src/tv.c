@@ -225,13 +225,13 @@ static const u16 sSilverSymbolFlags[NUM_FRONTIER_FACILITIES] = {
 };
 
 static const u16 sNumberOneVarsAndThresholds[][2] = {
-    {VAR_DAILY_SLOTS, 100},
-    {VAR_DAILY_ROULETTE,  50},
-    {VAR_DAILY_WILDS, 100},
-    {VAR_DAILY_BLENDER,  20},
-    {VAR_DAILY_PLANTED_BERRIES,  20},
-    {VAR_DAILY_PICKED_BERRIES,  20},
-    {VAR_DAILY_BP,  30}
+    {VAR_SINK, 100},
+    {VAR_SINK,  50},
+    {VAR_SINK, 100},
+    {VAR_SINK,  20},
+    {VAR_SINK,  20},
+    {VAR_SINK,  20},
+    {VAR_SINK,  30}
 };
 
 static const u8 *const sPokeNewsTextGroup_Upcoming[NUM_POKENEWS_TYPES + 1] = {
@@ -2405,13 +2405,13 @@ void TryPutSecretBaseSecretsOnAir(void)
             show->secretBaseSecrets.kind = TVSHOW_SECRET_BASE_SECRETS;
             show->secretBaseSecrets.active = FALSE; // NOTE: Show is not active until passed via Record Mix.
             StringCopy(show->secretBaseSecrets.playerName, gSaveBlock2Ptr->playerName);
-            show->secretBaseSecrets.stepsInBase = VarGet(VAR_SECRET_BASE_STEP_COUNTER);
+            show->secretBaseSecrets.stepsInBase = VarGet(VAR_SINK);
             CopyCurSecretBaseOwnerName_StrVar1();
             StringCopy(strbuf, gStringVar1);
             StripExtCtrlCodes(strbuf);
             StringCopy(show->secretBaseSecrets.baseOwnersName, strbuf);
-            show->secretBaseSecrets.item = VarGet(VAR_SECRET_BASE_LAST_ITEM_USED);
-            show->secretBaseSecrets.flags = VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) + (VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) << 16);
+            show->secretBaseSecrets.item = VarGet(VAR_SINK);
+            show->secretBaseSecrets.flags = VarGet(VAR_SINK) + (VarGet(VAR_SINK) << 16);
             StorePlayerIdInRecordMixShow(show);
             show->secretBaseSecrets.language = gGameLanguage;
             if (show->secretBaseSecrets.language == LANGUAGE_JAPANESE || gSaveBlock1Ptr->secretBases[VarGet(VAR_CURRENT_SECRET_BASE)].language == LANGUAGE_JAPANESE)
@@ -2462,37 +2462,37 @@ static void TryPutNumberOneOnAir(u8 actionIdx)
 
 void IncrementDailySlotsUses(void)
 {
-    VarSet(VAR_DAILY_SLOTS, VarGet(VAR_DAILY_SLOTS) + 1);
+    VarSet(VAR_SINK, VarGet(VAR_SINK) + 1);
 }
 
 void IncrementDailyRouletteUses(void)
 {
-    VarSet(VAR_DAILY_ROULETTE, VarGet(VAR_DAILY_ROULETTE) + 1);
+    VarSet(VAR_SINK, VarGet(VAR_SINK) + 1);
 }
 
 void IncrementDailyWildBattles(void)
 {
-    VarSet(VAR_DAILY_WILDS, VarGet(VAR_DAILY_WILDS) + 1);
+    VarSet(VAR_SINK, VarGet(VAR_SINK) + 1);
 }
 
 void IncrementDailyBerryBlender(void)
 {
-    VarSet(VAR_DAILY_BLENDER, VarGet(VAR_DAILY_BLENDER) + 1);
+    VarSet(VAR_SINK, VarGet(VAR_SINK) + 1);
 }
 
 void IncrementDailyPlantedBerries(void)
 {
-    VarSet(VAR_DAILY_PLANTED_BERRIES, VarGet(VAR_DAILY_PLANTED_BERRIES) + 1);
+    VarSet(VAR_SINK, VarGet(VAR_SINK) + 1);
 }
 
 void IncrementDailyPickedBerries(void)
 {
-    VarSet(VAR_DAILY_PICKED_BERRIES, VarGet(VAR_DAILY_PICKED_BERRIES) + gSpecialVar_0x8006);
+    VarSet(VAR_SINK, VarGet(VAR_SINK) + gSpecialVar_0x8006);
 }
 
 void IncrementDailyBattlePoints(u16 delta)
 {
-    VarSet(VAR_DAILY_BP, VarGet(VAR_DAILY_BP) + delta);
+    VarSet(VAR_SINK, VarGet(VAR_SINK) + delta);
 }
 
 // PokeNews
@@ -3313,7 +3313,7 @@ void GetMomOrDadStringForTVMessage(void)
 
 void HideBattleTowerReporter(void)
 {
-    VarSet(VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0);
+    VarSet(VAR_SINK, 0);
     RemoveObjectEventByLocalIdAndMap(LOCALID_BATTLE_TOWER_LOBBY_REPORTER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
 }
 

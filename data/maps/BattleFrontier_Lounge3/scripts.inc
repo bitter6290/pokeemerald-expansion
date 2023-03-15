@@ -32,7 +32,7 @@ BattleFrontier_Lounge3_EventScript_AskToEnterChallenge::
 
 BattleFrontier_Lounge3_EventScript_ChooseBetAmount::
 	multichoice 20, 4, MULTI_FRONTIER_GAMBLER_BET, FALSE
-	copyvar VAR_FRONTIER_GAMBLER_AMOUNT_BET, VAR_RESULT
+	copyvar VAR_SINK, VAR_RESULT
 	switch VAR_RESULT
 	case FRONTIER_GAMBLER_BET_5, BattleFrontier_Lounge3_EventScript_Bet5
 	case FRONTIER_GAMBLER_BET_10, BattleFrontier_Lounge3_EventScript_Bet10
@@ -68,7 +68,7 @@ BattleFrontier_Lounge3_EventScript_TryPlaceBet::
 BattleFrontier_Lounge3_EventScript_PlaceBet::
 	copyvar VAR_0x8004, VAR_0x8008
 	special TakeFrontierBattlePoints
-	setvar VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_PLACED_BET
+	setvar VAR_SINK, FRONTIER_GAMBLER_PLACED_BET
 	special UpdateBattlePointsWindow
 	playse SE_SHOP
 	msgbox BattleFrontier_Lounge3_Text_ThanksOffYouGo, MSGBOX_DEFAULT
@@ -105,31 +105,31 @@ BattleFrontier_Lounge3_EventScript_NotEnoughSilverSymbols::
 
 BattleFrontier_Lounge3_EventScript_AlreadyMetGambler::
 	msgbox BattleFrontier_Lounge3_Text_Oh, MSGBOX_DEFAULT
-	goto_if_ge VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_PLACED_BET, BattleFrontier_Lounge3_EventScript_CheckBetResults
+	goto_if_ge VAR_SINK, FRONTIER_GAMBLER_PLACED_BET, BattleFrontier_Lounge3_EventScript_CheckBetResults
 	goto BattleFrontier_Lounge3_EventScript_AskToEnterChallenge
 	end
 
 BattleFrontier_Lounge3_EventScript_CheckBetResults::
-	goto_if_eq VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_PLACED_BET, BattleFrontier_Lounge3_EventScript_ChallengeNotAttempted
-	goto_if_eq VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_WON, BattleFrontier_Lounge3_EventScript_WonChallenge
+	goto_if_eq VAR_SINK, FRONTIER_GAMBLER_PLACED_BET, BattleFrontier_Lounge3_EventScript_ChallengeNotAttempted
+	goto_if_eq VAR_SINK, FRONTIER_GAMBLER_WON, BattleFrontier_Lounge3_EventScript_WonChallenge
 	goto BattleFrontier_Lounge3_EventScript_LostChallenge
 	end
 
 BattleFrontier_Lounge3_EventScript_WonChallenge::
 	msgbox BattleFrontier_Lounge3_Text_HelloChampHeresYourPoints, MSGBOX_DEFAULT
-	call_if_eq VAR_FRONTIER_GAMBLER_AMOUNT_BET, FRONTIER_GAMBLER_BET_5, BattleFrontier_Lounge3_EventScript_RewardBet5
-	call_if_eq VAR_FRONTIER_GAMBLER_AMOUNT_BET, FRONTIER_GAMBLER_BET_10, BattleFrontier_Lounge3_EventScript_RewardBet10
-	call_if_eq VAR_FRONTIER_GAMBLER_AMOUNT_BET, FRONTIER_GAMBLER_BET_15, BattleFrontier_Lounge3_EventScript_RewardBet15
+	call_if_eq VAR_SINK, FRONTIER_GAMBLER_BET_5, BattleFrontier_Lounge3_EventScript_RewardBet5
+	call_if_eq VAR_SINK, FRONTIER_GAMBLER_BET_10, BattleFrontier_Lounge3_EventScript_RewardBet10
+	call_if_eq VAR_SINK, FRONTIER_GAMBLER_BET_15, BattleFrontier_Lounge3_EventScript_RewardBet15
 	msgbox BattleFrontier_Lounge3_Text_ObtainedBattlePoints, MSGBOX_GETPOINTS
 	special GiveFrontierBattlePoints
 	msgbox BattleFrontier_Lounge3_Text_ThinkOfMeForAnotherChallenge, MSGBOX_DEFAULT
-	setvar VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_WAITING
+	setvar VAR_SINK, FRONTIER_GAMBLER_WAITING
 	release
 	end
 
 BattleFrontier_Lounge3_EventScript_LostChallenge::
 	msgbox BattleFrontier_Lounge3_Text_NiceTryCantReturnPoints, MSGBOX_DEFAULT
-	setvar VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_WAITING
+	setvar VAR_SINK, FRONTIER_GAMBLER_WAITING
 	release
 	end
 

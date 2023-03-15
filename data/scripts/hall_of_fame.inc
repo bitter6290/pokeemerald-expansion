@@ -7,7 +7,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::
-	setvar VAR_FOSSIL_MANIAC_STATE, 1
+	setvar VAR_SINK, 1
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
@@ -15,11 +15,11 @@ EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
-	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 3
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 3
+	setvar VAR_SINK, 3
+	setvar VAR_SINK, 3
 	clearflag FLAG_SINK
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent::
-	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1
+	setvar VAR_SINK, 1
 	return

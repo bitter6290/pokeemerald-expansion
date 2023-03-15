@@ -152,9 +152,9 @@ BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier::
 	applymovement LOCALID_SCOTT, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox BattleFrontier_ScottsHouse_Text_HaveThisAsMementoOfOurPathsCrossing, MSGBOX_DEFAULT
-	goto_if_eq VAR_SCOTT_STATE, 13, BattleFrontier_ScottsHouse_EventScript_Give4BattlePoints
-	goto_if_ge VAR_SCOTT_STATE, 9, BattleFrontier_ScottsHouse_EventScript_Give3BattlePoints
-	goto_if_ge VAR_SCOTT_STATE, 6, BattleFrontier_ScottsHouse_EventScript_Give2BattlePoints
+	goto_if_eq VAR_SINK, 13, BattleFrontier_ScottsHouse_EventScript_Give4BattlePoints
+	goto_if_ge VAR_SINK, 9, BattleFrontier_ScottsHouse_EventScript_Give3BattlePoints
+	goto_if_ge VAR_SINK, 6, BattleFrontier_ScottsHouse_EventScript_Give2BattlePoints
 	goto BattleFrontier_ScottsHouse_EventScript_Give1BattlePoint
 	end
 

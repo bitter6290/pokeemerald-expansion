@@ -1,9 +1,9 @@
 CaveHole_CheckFallDownHole:
-	map_script_2 VAR_ICE_STEP_COUNT, 0, EventScript_FallDownHole
+	map_script_2 VAR_SINK, 0, EventScript_FallDownHole
 	.2byte 0
 
 CaveHole_FixCrackedGround:
-	copyvar VAR_ICE_STEP_COUNT, 1
+	copyvar VAR_SINK, 1
 	end
 
 EventScript_FallDownHole::

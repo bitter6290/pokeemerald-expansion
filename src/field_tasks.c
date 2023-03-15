@@ -676,7 +676,7 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
         tPrevX = x;
         tPrevY = y;
         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
-        iceStepCount = GetVarPointer(VAR_ICE_STEP_COUNT);
+        iceStepCount = GetVarPointer(VAR_SINK);
         if (MetatileBehavior_IsThinIce(tileBehavior) == TRUE)
         {
             // Thin ice, set it to cracked ice
@@ -766,7 +766,7 @@ static void AshGrassPerStepCallback(u8 taskId)
         // Try to gather ash
         if (CheckBagHasItem(ITEM_SOOT_SACK, 1))
         {
-            ashGatherCount = GetVarPointer(VAR_ASH_GATHER_COUNT);
+            ashGatherCount = GetVarPointer(VAR_SINK);
             if (*ashGatherCount < 9999)
                 (*ashGatherCount)++;
         }
@@ -810,7 +810,7 @@ static void CrackedFloorPerStepCallback(u8 taskId)
         SetCrackedFloorHoleMetatile(tFloor2X, tFloor2Y);
 
     if (MetatileBehavior_IsCrackedFloorHole(behavior))
-        VarSet(VAR_ICE_STEP_COUNT, 0); // this var does double duty
+        VarSet(VAR_SINK, 0); // this var does double duty
 
     // End if player hasn't moved
     if (x == tPrevX && y == tPrevY)
@@ -821,7 +821,7 @@ static void CrackedFloorPerStepCallback(u8 taskId)
     if (MetatileBehavior_IsCrackedFloor(behavior))
     {
         if (GetPlayerSpeed() != PLAYER_SPEED_FASTEST)
-            VarSet(VAR_ICE_STEP_COUNT, 0); // this var does double duty
+            VarSet(VAR_SINK, 0); // this var does double duty
 
         if (tFloor1Delay == 0)
         {

@@ -190,7 +190,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 	clearflag FLAG_SINK
 	clearflag FLAG_SINK
 	clearflag FLAG_SINK
-	setvar VAR_ELITE_4_STATE, 0
+	setvar VAR_SINK, 0
 	return
 
 
@@ -226,8 +226,8 @@ Common_EventScript_BufferTrendyPhrase::
 	return
 
 EventScript_BackupMrBrineyLocation::
-	copyvar VAR_0x8008, VAR_BRINEY_LOCATION
-	setvar VAR_BRINEY_LOCATION, 0
+	copyvar VAR_0x8008, VAR_SINK
+	setvar VAR_SINK, 0
 	return
 
 	.include "data/scripts/surf.inc"
@@ -565,7 +565,6 @@ Common_Text_LookCloserAtMap:
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
-	.include "data/scripts/abnormal_weather.inc"
 	.include "data/scripts/trainer_script.inc"
 	.include "data/scripts/berry_tree.inc"
 	.include "data/scripts/secret_base.inc"

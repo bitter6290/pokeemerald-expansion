@@ -217,9 +217,7 @@ gSpecials::
 	def_special ExitSafariMode
 	def_special GetPokeblockFeederInFront
 	def_special OpenPokeblockCaseOnFeeder
-	def_special IsMirageIslandPresent
 	def_special UpdateShoalTideFlag
-	def_special InitBirchState
 	def_special ScriptGetPokedexInfo
 	def_special ShowPokedexRatingMessage
 	def_special DoPCTurnOnEffect
@@ -476,7 +474,6 @@ gSpecials::
 	def_special SaveForBattleTowerLink
 	def_special Unused_SetWeatherSunny
 	def_special SetUnlockedPokedexFlags
-	def_special ShouldDoBrailleRegicePuzzle
 	def_special EnableNationalPokedex
 	def_special ScriptMenu_CreateLilycoveSSTidalMultichoice
 	def_special GetLilycoveSSTidalSelection
