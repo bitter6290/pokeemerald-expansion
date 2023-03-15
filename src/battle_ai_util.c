@@ -283,6 +283,14 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_PERISH_BODY] = -1,
     [ABILITY_WANDERING_SPIRIT] = 2,
     [ABILITY_GORILLA_TACTICS] = 4,
+	//Custom
+	[ABILITY_SHADE_SURGE] = 8,
+	[ABILITY_ROCKY_SURGE] = 7,
+	[ABILITY_SNOW_FORCE] = 4,
+	[ABILITY_STASIS] = 0,
+	[ABILITY_ACCELERATE] = 2,
+	[ABILITY_ASTRAL_LOCK] = 3,
+	[ABILITY_FIRE_CORE] = 1,
 };
 
 static const u16 sEncouragedEncoreEffects[] =
@@ -1580,6 +1588,7 @@ bool32 ShouldSetHail(u8 battler, u16 ability, u16 holdEffect)
       || ability == ABILITY_SLUSH_RUSH
       || ability == ABILITY_MAGIC_GUARD
       || ability == ABILITY_OVERCOAT
+      || ability == ABILITY_SNOW_FORCE
       || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
       || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || HasMove(battler, MOVE_BLIZZARD)
@@ -3686,6 +3695,9 @@ void IncreaseSleepScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
     if ((HasMoveEffect(battlerAtk, EFFECT_DREAM_EATER) || HasMoveEffect(battlerAtk, EFFECT_NIGHTMARE))
       && !(HasMoveEffect(battlerDef, EFFECT_SNORE) || HasMoveEffect(battlerDef, EFFECT_SLEEP_TALK)))
         (*score)++;
+        
+    if (AI_IsTerrainAffected(battlerDef, STATUS_FIELD_DARK_TERRAIN))
+    	(*score)++;
 
     if (HasMoveEffect(battlerAtk, EFFECT_HEX) || HasMoveEffect(BATTLE_PARTNER(battlerAtk), EFFECT_HEX))
         (*score)++;

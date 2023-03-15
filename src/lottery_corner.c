@@ -26,7 +26,7 @@ void ResetLotteryCorner(void)
     u16 rand = Random();
 
     SetLotteryNumber((Random() << 16) | rand);
-    VarSet(VAR_POKELOT_PRIZE_ITEM, 0);
+    VarSet(VAR_SINK, 0);
 }
 
 void SetRandomLotteryNumber(u16 i)
@@ -145,14 +145,14 @@ void SetLotteryNumber(u32 lotteryNum)
     u16 lowNum = lotteryNum >> 16;
     u16 highNum = lotteryNum;
 
-    VarSet(VAR_POKELOT_RND1, highNum);
-    VarSet(VAR_POKELOT_RND2, lowNum);
+    VarSet(VAR_SINK, highNum);
+    VarSet(VAR_SINK, lowNum);
 }
 
 u32 GetLotteryNumber(void)
 {
-    u16 highNum = VarGet(VAR_POKELOT_RND1);
-    u16 lowNum = VarGet(VAR_POKELOT_RND2);
+    u16 highNum = VarGet(VAR_SINK);
+    u16 lowNum = VarGet(VAR_SINK);
 
     return (lowNum << 16) | highNum;
 }

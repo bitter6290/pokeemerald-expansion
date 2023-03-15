@@ -11,11 +11,11 @@ CableClub_EventScript_HideOrShowMysteryGiftMan::
 	end
 
 CableClub_EventScript_ShowMysteryGiftMan::
-	clearflag FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN
+	clearflag FLAG_SINK
 	return
 
 CableClub_EventScript_HideMysteryGiftMan::
-	setflag FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN
+	setflag FLAG_SINK
 	return
 
 CableClub_EventScript_MysteryGiftMan::
@@ -37,7 +37,7 @@ CableClub_EventScript_DistributeEonTicket::
 	msgbox MysteryGift_Text_TheresATicketForYou, MSGBOX_DEFAULT
 	giveitem ITEM_EON_TICKET
 	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
-	setvar VAR_DISTRIBUTE_EON_TICKET, 0
+	setvar VAR_SINK, 0
 	msgbox MysteryGift_Text_TryUsingItAtLilycovePort, MSGBOX_DEFAULT
 	release
 	end

@@ -5399,3 +5399,77 @@ const u8 gEnamorusPokedexText[] = _(
     "Pokémon's love gives rise to the\n"
     "budding of fresh life across the land.");
 #endif
+
+// Custom
+const u8 gKrickallousPokedexText[] = _(
+	"Embittered by its rejection as\n"
+	"clan leader, this Pokémon hunts\n"
+	"alone and broods for days on end\n"
+	"in the dark of the forest.");
+
+const u8 gKricketonPokedexText[] = _(
+	"This rare Pokémon possesses\n"
+	"an unparalleled musical sense,\n"
+	"bringing its clan notoriety\n"
+	"wherever it appears.");
+	
+const u8 gLedennaPokedexText[] = _(
+	"Its antennae allow it to channel\n"
+	"radiation from the night sky,\n"
+	"accentuating its natural power.");
+	
+const u8 gAloobatPokedexText[] = _(
+	"Upon evolution, it withdrew and became\n"
+	"much less social. Now, it seems to\n"
+	"act as a mentor and guard for its\n"
+	"pack.");
+	
+const u8 gMoradilePokedexText[] = _(
+	"Hunting in its native swamplands, this\n"
+	"Pokémon darts through the water with\n"
+	"incredible speed.");
+	
+const u8 gPoltendulaPokedexText[] = _(
+	"Evolving gave this Pokémon new\n"
+	"power over the passage of time.");
+
+const u8 gAridospidPokedexText[] = _(
+	"Native to the deserts of Kanto,\n"
+	"this Pokémon has been mistaken for\n"
+	"Orthworm due to its habit of tunnelling\n"
+	"through sand.");
+
+const u8 gFauvanticPokedexText[] = _(
+	"The guardian of !Missing's forest\n"
+	"creatures, this Pokémon is said to lure\n"
+	"people into its nest with illusions,\n"
+	"making them prey for its herd.");
+	
+const u8 gFloresticPokedexText[] = _(
+	"The guardian of !Missing's plants\n"
+	"and trees, this Pokémon is said to\n"
+	"obsessively collect and catalogue\n"
+	"all seeds and plants that it can find.");
+	
+const u8 gTerranticPokedexText[] = _(
+	"The guardian of the soil feeding\n"
+	"!Missing's forests, this Pokémon\n"
+	"is said to wait decades at a time\n"
+	"for a tremor to wake it up.");
+	
+const u8 gAureaticPokedexText[] = _(
+	"This elusive Pokémon is said to be\n"
+	"the head of !Missing's forest spirits,\n"
+	"making sure that the sun reaches\n"
+	"every nook and cranny.");
+	
+const u8 gWinterPlumePokedexText[] = _(
+	"An ancient Pokémon which reappeared\n"
+	"twice in !Missing, Winter Plume\n"
+	"is plagued by an irresistable urge\n"
+	"to cover the world in ash.");
+	
+const u8 gIronCordsPokedexText[] = _(
+	"It seems to be made in the image\n"
+	"of Meloetta, but it isn't clear\n"
+	"what animates this Pokémon.");

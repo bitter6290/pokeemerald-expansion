@@ -10880,5 +10880,161 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 296,
         .trainerOffset = 1,
     },
+    
+    [NATIONAL_DEX_KRICKALLOUS] =
+    {
+        .categoryName = _("Bitter"),
+        .height = 8,
+        .weight = 100,
+        .description = gKrickallousPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_KRICKETON] =
+    {
+        .categoryName = _("Conductor"),
+        .height = 9,
+        .weight = 90,
+        .description = gKricketonPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_LEDENNA] =
+    {
+        .categoryName = _("Five Star"),
+        .height = 20,
+        .weight = 480,
+        .description = gLedennaPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_ALOOBAT] =
+    {
+        .categoryName = _("Departing"),
+        .height = 16,
+        .weight = 145,
+        .description = gAloobatPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_MORADILE] =
+    {
+        .categoryName = _("Swamp"),
+        .height = 21,
+        .weight = 963,
+        .description = gMoradilePokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_POLTENDULA] =
+    {
+        .categoryName = _("Timekeeper"),
+        .height = 17,
+        .weight = 1440,
+        .description = gPoltendulaPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_ARIDOSPID] =
+    {
+        .categoryName = _("Sand Treader"),
+        .height = 16,
+        .weight = 480,
+        .description = gAridospidPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_FAUVANTIC] =
+    {
+        .categoryName = _("ForestSpirit"),
+        .height = 16,
+        .weight = 200,
+        .description = gFauvanticPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_FLORESTIC] =
+    {
+        .categoryName = _("ForestSpirit"),
+        .height = 15,
+        .weight = 350,
+        .description = gFloresticPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_TERRANTIC] =
+    {
+        .categoryName = _("ForestSpirit"),
+        .height = 13,
+        .weight = 760,
+        .description = gTerranticPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_AUREATIC] =
+    {
+        .categoryName = _("Sun Spirit"),
+        .height = 8,
+        .weight = 350,
+        .description = gAureaticPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_WINTER_PLUME] =
+    {
+        .categoryName = _("Ash"),
+        .height = 15,
+        .weight = 3200,
+        .description = gWinterPlumePokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
+    
+    [NATIONAL_DEX_IRON_CORDS] =
+    {
+        .categoryName = _("Paradox"),
+        .height = 6,
+        .weight = 115,
+        .description = gIronCordsPokedexText,
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+    },
 #endif
 };
