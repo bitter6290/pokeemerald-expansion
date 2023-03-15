@@ -18,9 +18,9 @@
 LilycoveCity_ContestLobby_EventScript_SpeakToContestReceptionist::
 	lock
 	faceplayer
-	goto_if_ne VAR_CONTEST_PRIZE_PICKUP, 0, LilycoveCity_ContestLobby_EventScript_PickUpPrize
-	call_if_set FLAG_RECEIVED_POKEBLOCK_CASE, LilycoveCity_ContestLobby_EventScript_ReceptionWelcome
-	call_if_unset FLAG_RECEIVED_POKEBLOCK_CASE, LilycoveCity_ContestLobby_EventScript_GivePokeblockCase
+	goto_if_ne VAR_SINK, 0, LilycoveCity_ContestLobby_EventScript_PickUpPrize
+	call_if_set FLAG_SINK, LilycoveCity_ContestLobby_EventScript_ReceptionWelcome
+	call_if_unset FLAG_SINK, LilycoveCity_ContestLobby_EventScript_GivePokeblockCase
 	goto LilycoveCity_ContestLobby_EventScript_AskEnterContest
 	end
 
@@ -31,20 +31,20 @@ LilycoveCity_ContestLobby_EventScript_ReceptionWelcome::
 LilycoveCity_ContestLobby_EventScript_GivePokeblockCase::
 	msgbox LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase, MSGBOX_DEFAULT
 	giveitem ITEM_POKEBLOCK_CASE
-	setflag FLAG_RECEIVED_POKEBLOCK_CASE
+	setflag FLAG_SINK
 	msgbox LilycoveCity_ContestLobby_Text_NowThatWeveClearedThatUp, MSGBOX_DEFAULT
 	return
 
 LilycoveCity_ContestLobby_EventScript_PickUpPrize::
 	msgbox LilycoveCity_ContestLobby_Text_PokemonWonWeHavePrize, MSGBOX_DEFAULT
-	switch VAR_CONTEST_PRIZE_PICKUP
+	switch VAR_SINK
 	case 4, LilycoveCity_ContestLobby_EventScript_GiveLuxuryBallAtCounter
 	end
 
 LilycoveCity_ContestLobby_EventScript_GiveLuxuryBallAtCounter::
 	giveitem ITEM_LUXURY_BALL
 	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_ContestLobby_EventScript_NoRoomForLuxuryBallAtCounter
-	setvar VAR_CONTEST_PRIZE_PICKUP, 0
+	setvar VAR_SINK, 0
 	closemessage
 	release
 	end
@@ -1061,11 +1061,11 @@ ContestHall_EventScript_DontSkipPrize::
 
 @ This flag is never read
 ContestHall_EventScript_SetSketchFlag::
-	setflag FLAG_CONTEST_SKETCH_CREATED
+	setflag FLAG_SINK
 	return
 
 ContestHall_EventScript_SetReadyForContestArtist::
-	setvar VAR_LILYCOVE_CONTEST_LOBBY_STATE, 1
+	setvar VAR_SINK, 1
 	return
 
 ContestHall_EventScript_EndLinkContest::
@@ -1078,7 +1078,7 @@ ContestHall_EventScript_EndLinkContest::
 	return
 
 ContestHall_EventScript_SetReadyForLinkContestArtist::
-	setvar VAR_LILYCOVE_CONTEST_LOBBY_STATE, 2
+	setvar VAR_SINK, 2
 	return
 
 @ Unused
@@ -1145,7 +1145,7 @@ ContestHall_EventScript_NoRoomForLuxuryBall::
 	call Common_EventScript_BagIsFull
 	msgbox ContestHall_Text_PickUpPrizeAtCounterLater, MSGBOX_DEFAULT
 	releaseall
-	setvar VAR_CONTEST_PRIZE_PICKUP, 4
+	setvar VAR_SINK, 4
 	return
 
 ContestHall_EventScript_GiveLuxuryBall::

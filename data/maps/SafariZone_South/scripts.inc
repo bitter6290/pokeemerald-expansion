@@ -6,7 +6,7 @@ SafariZone_South_MapScripts::
 	.byte 0
 
 SafariZone_South_OnFrame:
-	map_script_2 VAR_SAFARI_ZONE_STATE, 2, SafariZone_South_EventScript_EnterSafariZone
+	map_script_2 VAR_SINK, 2, SafariZone_South_EventScript_EnterSafariZone
 	.2byte 0
 
 SafariZone_South_EventScript_EnterSafariZone::
@@ -16,12 +16,12 @@ SafariZone_South_EventScript_EnterSafariZone::
 	applymovement LOCALID_ATTENDANT, SafariZone_South_Movement_ExitAttendantBlockDoor
 	waitmovement 0
 	setobjectxyperm LOCALID_ATTENDANT, 32, 34
-	setvar VAR_SAFARI_ZONE_STATE, 0
+	setvar VAR_SINK, 0
 	releaseall
 	end
 
 SafariZone_South_OnTransition:
-	call_if_eq VAR_SAFARI_ZONE_STATE, 2, SafariZone_South_EventScript_SetExitAttendantAside
+	call_if_eq VAR_SINK, 2, SafariZone_South_EventScript_SetExitAttendantAside
 	end
 
 SafariZone_South_EventScript_SetExitAttendantAside::
@@ -52,7 +52,7 @@ SafariZone_South_EventScript_Youngster::
 SafariZone_South_EventScript_ExitAttendant::
 	lock
 	faceplayer
-	goto_if_unset FLAG_GOOD_LUCK_SAFARI_ZONE, SafariZone_South_EventScript_GoodLuck
+	goto_if_unset FLAG_SINK, SafariZone_South_EventScript_GoodLuck
 	msgbox SafariZone_South_Text_StillHaveTimeExit, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, SafariZone_South_EventScript_ExitEarly
 	msgbox SafariZone_South_Text_EnjoyTheRestOfYourAdventure, MSGBOX_DEFAULT
@@ -60,7 +60,7 @@ SafariZone_South_EventScript_ExitAttendant::
 	end
 
 SafariZone_South_EventScript_GoodLuck::
-	setflag FLAG_GOOD_LUCK_SAFARI_ZONE
+	setflag FLAG_SINK
 	msgbox SafariZone_South_Text_GoodLuck, MSGBOX_DEFAULT
 	release
 	end
@@ -90,9 +90,9 @@ SafariZone_South_EventScript_ExitEarlyEast::
 	end
 
 SafariZone_South_EventScript_Exit::
-	setvar VAR_SAFARI_ZONE_STATE, 1
+	setvar VAR_SINK, 1
 	special ExitSafariMode
-	warpdoor MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
+@	warpdoor MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
 	waitstate
 	end
 

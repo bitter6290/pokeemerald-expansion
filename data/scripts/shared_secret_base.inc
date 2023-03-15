@@ -38,7 +38,7 @@ SecretBase_EventScript_PC::
 SecretBase_EventScript_PCShowMainMenu::
 	message SecretBase_Text_WhatWouldYouLikeToDo
 	waitmessage
-	goto_if_set FLAG_SECRET_BASE_REGISTRY_ENABLED, SecretBase_EventScript_PCMainMenuWithRegister
+	goto_if_set FLAG_SINK, SecretBase_EventScript_PCMainMenuWithRegister
 	goto SecretBase_EventScript_PCMainMenuWithoutRegister
 	end
 

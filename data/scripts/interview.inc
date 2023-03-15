@@ -50,8 +50,8 @@ SlateportCity_OceanicMuseum_1F_EventScript_Reporter::
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, SlateportCity_OceanicMuseum_1F_EventScript_AlreadyInterviewed
 	copyvar VAR_0x8009, VAR_0x8006
-	goto_if_set FLAG_OCEANIC_MUSEUM_MET_REPORTER, SlateportCity_OceanicMuseum_1F_EventScript_RequestInterviewShort
-	setflag FLAG_OCEANIC_MUSEUM_MET_REPORTER
+	goto_if_set FLAG_SINK, SlateportCity_OceanicMuseum_1F_EventScript_RequestInterviewShort
+	setflag FLAG_SINK
 	msgbox SlateportCity_OceanicMuseum_1F_Text_InterviewRequest, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, SlateportCity_OceanicMuseum_1F_EventScript_AcceptInterview
 	goto_if_eq VAR_RESULT, NO, SlateportCity_OceanicMuseum_1F_EventScript_DeclineInterview
@@ -227,7 +227,7 @@ LilycoveCity_ContestLobby_EventScript_TryShowContestReporter::
 	end
 
 LilycoveCity_ContestLobby_EventScript_ShowContestReporter::
-	clearflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
+	clearflag FLAG_SINK
 	return
 
 LilycoveCity_ContestLobby_EventScript_DontShowContestReporter::
@@ -296,15 +296,15 @@ BattleFrontier_BattleTowerLobby_EventScript_AlreadyInterviewed::
 	end
 
 BattleFrontier_BattleTowerLobby_EventScript_ShowOrHideReporter::
-	goto_if_eq VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0, BattleFrontier_BattleTowerLobby_EventScript_HideReporter
+	goto_if_eq VAR_SINK, 0, BattleFrontier_BattleTowerLobby_EventScript_HideReporter
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_BATTLE_TOWER_PROFILE
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_BattleTowerLobby_EventScript_HideReporter
-	clearflag FLAG_HIDE_BATTLE_TOWER_REPORTER
+	clearflag FLAG_SINK
 	return
 
 BattleFrontier_BattleTowerLobby_EventScript_HideReporter::
-	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
+	setflag FLAG_SINK
 	return
 
 @ Unused

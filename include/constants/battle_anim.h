@@ -506,6 +506,11 @@
 #define BG_STEEL_BEAM_OPPONENT 78
 #define BG_STEEL_BEAM_PLAYER 79
 
+#define BG_CUSTOM BG_STEEL_BEAM_PLAYER
+
+#define BG_DARK_TERRAIN BG_CUSTOM + 1
+#define BG_ROCKY_TERRAIN BG_CUSTOM + 2
+
 // table ids for general animations (gBattleAnims_General)
 #define B_ANIM_CASTFORM_CHANGE          0
 #define B_ANIM_STATS_CHANGE             1

@@ -5,9 +5,9 @@ BattleFrontier_Lounge7_EventScript_LeftMoveTutor::
 	lock
 	faceplayer
 	setvar VAR_TEMP_C, SCROLL_MULTI_BF_MOVE_TUTOR_1
-	goto_if_set FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR, BattleFrontier_Lounge7_EventScript_AlreadyMetLeftTutor
+	goto_if_set FLAG_SINK, BattleFrontier_Lounge7_EventScript_AlreadyMetLeftTutor
 	msgbox BattleFrontier_Lounge7_Text_LeftTutorIntro, MSGBOX_DEFAULT
-	setflag FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR
+	setflag FLAG_SINK
 	goto BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove
 	end
 
@@ -129,9 +129,9 @@ BattleFrontier_Lounge7_EventScript_RightMoveTutor::
 	lock
 	faceplayer
 	setvar VAR_TEMP_C, SCROLL_MULTI_BF_MOVE_TUTOR_2
-	goto_if_set FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR, BattleFrontier_Lounge7_EventScript_AlreadyMetRightTutor
+	goto_if_set FLAG_SINK, BattleFrontier_Lounge7_EventScript_AlreadyMetRightTutor
 	msgbox BattleFrontier_Lounge7_Text_RightTutorIntro, MSGBOX_DEFAULT
-	setflag FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR
+	setflag FLAG_SINK
 	goto BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove
 	end
 

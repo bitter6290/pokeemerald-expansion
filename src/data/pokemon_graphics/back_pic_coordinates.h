@@ -1359,5 +1359,52 @@ const struct MonCoords gMonBackPicCoords[] =
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE]           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
+	// Custom
+	[SPECIES_KRICKALLOUS]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_KRICKETON]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_LEDENNA]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_ALOOBAT]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_MORADILE]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_POLTENDULA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_ARIDOSPID]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_FAUVANTIC]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_FLORESTIC]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_TERRANTIC]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_AUREATIC]				= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_WINTER_PLUME]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_IRON_CORDS]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_SHINX_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_LUXIO_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_LUXRAY_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_TIMBURR_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_GURDURR_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_CONKELDURR_KANTO]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_LITWICK_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_LAMPENT_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_CHANDELURE_KANTO]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_TORKOAL_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_SANDYGAST_KANTO]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_SANDILE_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_KROKOROK_KANTO]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_SURSKIT_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_MASQUERAIN_KANTO]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_GIBLE_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_GABITE_KANTO]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_GARCHOMP_KANTO]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_ARBOK_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_BLASTOISE_MEGA_Y]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_VENUSAUR_MEGA_Y]		= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_OMASTAR_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_KABUTOPS_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_FLAREON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_VAPOREON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_JOLTEON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_ESPEON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_UMBREON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_LEAFEON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_GLACEON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_SYLVEON_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_CROBAT_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
+	[SPECIES_RAPIDASH_MEGA]			= { .size = MON_COORDS_SIZE(40, 40), .y_offset = 12 },		//!Missing: Needs data
     [SPECIES_EGG]                          = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },
 };

@@ -12,8 +12,8 @@ BattleFrontier_OutsideWest_MapScripts::
 	.byte 0
 
 BattleFrontier_OutsideWest_OnTransition:
-	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
-	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
+	setvar VAR_SINK, 0
+	setflag FLAG_SINK
 	end
 
 BattleFrontier_OutsideWest_EventScript_FerryAttendant::
@@ -46,7 +46,6 @@ BattleFrontier_OutsideWest_EventScript_FerryToSlateport::
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
 	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
 	call BattleFrontier_OutsideWest_EventScript_BoardFerry
-	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
 	waitstate
 	release
 	end
@@ -56,7 +55,6 @@ BattleFrontier_OutsideWest_EventScript_FerryToLilycove::
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
 	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
 	call BattleFrontier_OutsideWest_EventScript_BoardFerry
-	warp MAP_LILYCOVE_CITY_HARBOR, 8, 11
 	waitstate
 	release
 	end
@@ -74,7 +72,6 @@ BattleFrontier_OutsideWest_EventScript_BoardFerry::
 	delay 30
 	hideobjectat LOCALID_FERRY_ATTENDANT, MAP_BATTLE_FRONTIER_OUTSIDE_WEST
 	setvar VAR_0x8004, LOCALID_SS_TIDAL
-	call Common_EventScript_FerryDepartIsland
 	return
 
 BattleFrontier_OutsideWest_EventScript_CancelFerrySelect::

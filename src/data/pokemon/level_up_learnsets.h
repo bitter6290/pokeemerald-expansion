@@ -19580,3 +19580,130 @@ static const struct LevelUpMove sCalyrexShadowRiderLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 #endif
+
+// Custom
+
+static const struct LevelUpMove sKrickallousLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sKricketonLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sLedennaLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sAloobatLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sMoradileLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sPoltendulaLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sAridospidLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sFauvanticLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sFloresticLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sTerranticLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sAureaticLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sWinterPlumeLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sIronCordsLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sShinxKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sLuxioKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sLuxrayKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sTimburrKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sGurdurrKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sConkeldurrKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sLitwickKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sLampentKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sChandelureKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sTorkoalKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sSandygastKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sSandileKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sKrokorokKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sSurskitKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sMasquerainKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sGibleKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sGabiteKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+
+static const struct LevelUpMove sGarchompKantoLevelUpLearnset[] = {
+	LEVEL_UP_END
+};		//!Missing: Needs level-up learnset
+

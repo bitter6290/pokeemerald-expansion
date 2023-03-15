@@ -1254,6 +1254,21 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(ENAMORUS),
 #endif
 
+	// Custom
+	SPECIES_TO_NATIONAL(KRICKALLOUS),
+	SPECIES_TO_NATIONAL(KRICKETON),
+	SPECIES_TO_NATIONAL(LEDENNA),
+	SPECIES_TO_NATIONAL(ALOOBAT),
+	SPECIES_TO_NATIONAL(MORADILE),
+	SPECIES_TO_NATIONAL(POLTENDULA),
+	SPECIES_TO_NATIONAL(ARIDOSPID),
+	SPECIES_TO_NATIONAL(FAUVANTIC),
+	SPECIES_TO_NATIONAL(FLORESTIC),
+	SPECIES_TO_NATIONAL(TERRANTIC),
+	SPECIES_TO_NATIONAL(AUREATIC),
+	SPECIES_TO_NATIONAL(WINTER_PLUME),
+	SPECIES_TO_NATIONAL(IRON_CORDS),
+
     // Megas
     [SPECIES_VENUSAUR_MEGA - 1] = NATIONAL_DEX_VENUSAUR,
     [SPECIES_CHARIZARD_MEGA_X - 1] = NATIONAL_DEX_CHARIZARD,
@@ -1672,6 +1687,38 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_ENAMORUS_THERIAN - 1] = NATIONAL_DEX_ENAMORUS,
     [SPECIES_BASCULEGION_FEMALE - 1] = NATIONAL_DEX_BASCULEGION,
 #endif
+	[SPECIES_SHINX_KANTO - 1] = NATIONAL_DEX_SHINX,
+	[SPECIES_LUXIO_KANTO - 1] = NATIONAL_DEX_LUXIO,
+	[SPECIES_LUXRAY_KANTO - 1] = NATIONAL_DEX_LUXRAY,
+	[SPECIES_TIMBURR_KANTO - 1] = NATIONAL_DEX_TIMBURR,
+	[SPECIES_GURDURR_KANTO - 1] = NATIONAL_DEX_GURDURR,
+	[SPECIES_CONKELDURR_KANTO - 1] = NATIONAL_DEX_CONKELDURR,
+	[SPECIES_LITWICK_KANTO - 1] = NATIONAL_DEX_LITWICK,
+	[SPECIES_LAMPENT_KANTO - 1] = NATIONAL_DEX_LAMPENT,
+	[SPECIES_CHANDELURE_KANTO - 1] = NATIONAL_DEX_CHANDELURE,
+	[SPECIES_TORKOAL_KANTO - 1] = NATIONAL_DEX_TORKOAL,
+	[SPECIES_SANDILE_KANTO - 1] = NATIONAL_DEX_SANDILE,
+	[SPECIES_KROKOROK_KANTO - 1] = NATIONAL_DEX_KROKOROK,
+	[SPECIES_SURSKIT_KANTO - 1] = NATIONAL_DEX_SURSKIT,
+	[SPECIES_MASQUERAIN_KANTO - 1] = NATIONAL_DEX_MASQUERAIN,
+	[SPECIES_GIBLE_KANTO - 1] = NATIONAL_DEX_GIBLE,
+	[SPECIES_GABITE_KANTO - 1] = NATIONAL_DEX_GABITE,
+	[SPECIES_GARCHOMP_KANTO - 1] = NATIONAL_DEX_GARCHOMP,
+	[SPECIES_ARBOK_MEGA - 1] = NATIONAL_DEX_ARBOK,
+	[SPECIES_BLASTOISE_MEGA_Y - 1] = NATIONAL_DEX_BLASTOISE,
+	[SPECIES_VENUSAUR_MEGA_Y - 1] = NATIONAL_DEX_VENUSAUR,
+	[SPECIES_OMASTAR_MEGA - 1] = NATIONAL_DEX_OMASTAR,
+	[SPECIES_KABUTOPS_MEGA - 1] = NATIONAL_DEX_KABUTOPS,
+	[SPECIES_FLAREON_MEGA - 1] = NATIONAL_DEX_FLAREON,
+	[SPECIES_VAPOREON_MEGA - 1] = NATIONAL_DEX_VAPOREON,
+	[SPECIES_JOLTEON_MEGA - 1] = NATIONAL_DEX_JOLTEON,
+	[SPECIES_ESPEON_MEGA - 1] = NATIONAL_DEX_ESPEON,
+	[SPECIES_UMBREON_MEGA - 1] = NATIONAL_DEX_UMBREON,
+	[SPECIES_LEAFEON_MEGA - 1] = NATIONAL_DEX_LEAFEON,
+	[SPECIES_GLACEON_MEGA - 1] = NATIONAL_DEX_GLACEON,
+	[SPECIES_SYLVEON_MEGA - 1] = NATIONAL_DEX_SYLVEON,
+	[SPECIES_CROBAT_MEGA - 1] = NATIONAL_DEX_CROBAT,
+	[SPECIES_RAPIDASH_MEGA - 1] = NATIONAL_DEX_RAPIDASH,
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -3836,38 +3883,6 @@ void CreateBattleTowerMon_HandleLevel(struct Pokemon *mon, struct BattleTowerPok
     CalculateMonStats(mon);
 }
 
-void CreateApprenticeMon(struct Pokemon *mon, const struct Apprentice *src, u8 monId)
-{
-    s32 i;
-    u16 evAmount;
-    u8 language;
-    u32 otId = gApprentices[src->id].otId;
-    u32 personality = ((gApprentices[src->id].otId >> 8) | ((gApprentices[src->id].otId & 0xFF) << 8))
-                    + src->party[monId].species + src->number;
-
-    CreateMon(mon,
-              src->party[monId].species,
-              GetFrontierEnemyMonLevel(src->lvlMode - 1),
-              MAX_PER_STAT_IVS,
-              TRUE,
-              personality,
-              OT_ID_PRESET,
-              otId);
-
-    SetMonData(mon, MON_DATA_HELD_ITEM, &src->party[monId].item);
-    for (i = 0; i < MAX_MON_MOVES; i++)
-        SetMonMoveSlot(mon, src->party[monId].moves[i], i);
-
-    evAmount = MAX_TOTAL_EVS / NUM_STATS;
-    for (i = 0; i < NUM_STATS; i++)
-        SetMonData(mon, MON_DATA_HP_EV + i, &evAmount);
-
-    language = src->language;
-    SetMonData(mon, MON_DATA_LANGUAGE, &language);
-    SetMonData(mon, MON_DATA_OT_NAME, GetApprenticeNameInLanguage(src->id, language));
-    CalculateMonStats(mon);
-}
-
 void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level, u8 nature, u8 fixedIV, u8 evSpread, u32 otId)
 {
     s32 i;
@@ -5741,7 +5756,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[gBattlerInMenuId].holdEffect;
         else
+            #ifndef FREE_ENIGMA_BERRY
             holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+            #else
+            holdEffect = 0;
+            #endif
     }
     else
     {
@@ -5782,7 +5801,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         if (gMain.inBattle)
             itemEffect = gEnigmaBerries[gActiveBattler].itemEffect;
         else
+            #ifndef FREE_ENIGMA_BERRY
             itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
+            #else
+            itemEffect = 0;
+            #endif
     }
     else
     {
@@ -6466,7 +6489,11 @@ u8 *UseStatIncreaseItem(u16 itemId)
         if (gMain.inBattle)
             itemEffect = gEnigmaBerries[gBattlerInMenuId].itemEffect;
         else
+            #ifndef FREE_ENIGMA_BERRY
             itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
+            #else
+            itemEffect = 0;
+            #endif
     }
     else
     {
@@ -6538,14 +6565,18 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     u16 partnerSpecies;
     u16 partnerHeldItem;
     u8 partnerHoldEffect;
-
+    
     if (tradePartner != NULL)
     {
         partnerSpecies = GetMonData(tradePartner, MON_DATA_SPECIES, 0);
         partnerHeldItem = GetMonData(tradePartner, MON_DATA_HELD_ITEM, 0);
 
         if (partnerHeldItem == ITEM_ENIGMA_BERRY)
-            partnerHoldEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #ifndef FREE_ENIGMA_BERRY
+        holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #else
+        holdEffect = 0;
+        #endif
         else
             partnerHoldEffect = ItemId_GetHoldEffect(partnerHeldItem);
     }
@@ -6557,7 +6588,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     }
 
     if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
+        #ifndef FREE_ENIGMA_BERRY
         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #else
+        holdEffect = 0;
+        #endif
     else
         holdEffect = ItemId_GetHoldEffect(heldItem);
 
@@ -7162,7 +7197,11 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[0].holdEffect;
         else
+            #ifndef FREE_ENIGMA_BERRY
             holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+            #else
+            holdEffect = 0;
+            #endif
     }
     else
     {
@@ -7219,7 +7258,11 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[0].holdEffect;
         else
-            holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #ifndef FREE_ENIGMA_BERRY
+       		holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #else
+      	 	holdEffect = 0;
+        #endif
     }
     else
     {
@@ -7949,44 +7992,20 @@ void SetWildMonHeldItem(void)
 
             rnd = Random() % 100;
             species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, 0);
-            if (gMapHeader.mapLayoutId == LAYOUT_ALTERING_CAVE)
-            {
-                s32 alteringCaveId = GetWildMonTableIdInAlteringCave(species);
-                if (alteringCaveId != 0)
-                {
-                    // In active Altering Cave, use special item list
-                    if (rnd < chanceNotRare)
-                        continue;
-                    SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &sAlteringCaveWildMonHeldItems[alteringCaveId].item);
-                }
-                else
-                {
-                    // In inactive Altering Cave, use normal items
-                    if (rnd < chanceNoItem)
-                        continue;
-                    if (rnd < chanceNotRare)
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-                    else
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
-                }
-            }
-            else
-            {
-                if (gSpeciesInfo[species].itemCommon == gSpeciesInfo[species].itemRare && gSpeciesInfo[species].itemCommon != ITEM_NONE)
-                {
-                    // Both held items are the same, 100% chance to hold item
-                    SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-                }
-                else
-                {
-                    if (rnd < chanceNoItem)
-                        continue;
-                    if (rnd < chanceNotRare)
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-                    else
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
-                }
-            }
+			if (gSpeciesInfo[species].itemCommon == gSpeciesInfo[species].itemRare && gSpeciesInfo[species].itemCommon != ITEM_NONE)
+			{
+				// Both held items are the same, 100% chance to hold item
+				SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
+			}
+			else
+			{
+				if (rnd < chanceNoItem)
+					continue;
+				if (rnd < chanceNotRare)
+					SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
+				else
+					SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
+			}
         }
     }
 }

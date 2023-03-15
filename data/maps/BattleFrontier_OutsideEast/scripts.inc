@@ -16,13 +16,13 @@ BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo::
 	return
 
 BattleFrontier_OutsideEast_OnTransition:
-	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
-	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
-	call_if_unset FLAG_DEFEATED_SUDOWOODO, BattleFrontier_OutsideEast_EventScript_ShowSudowoodo
+	setvar VAR_SINK, 0
+	setflag FLAG_SINK
+	call_if_unset FLAG_SINK, BattleFrontier_OutsideEast_EventScript_ShowSudowoodo
 	end
 
 BattleFrontier_OutsideEast_EventScript_ShowSudowoodo::
-	clearflag FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO
+	clearflag FLAG_SINK
 	return
 
 BattleFrontier_OutsideEast_EventScript_BattleTowerSign::
@@ -137,12 +137,12 @@ BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo
-	setflag FLAG_DEFEATED_SUDOWOODO
+	setflag FLAG_SINK
 	release
 	end
 
 BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo::
-	setflag FLAG_DEFEATED_SUDOWOODO
+	setflag FLAG_SINK
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
@@ -219,7 +219,7 @@ BattleFrontier_OutsideEast_EventScript_Gentleman::
 BattleFrontier_OutsideEast_EventScript_OldWoman::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_SUDOWOODO, BattleFrontier_OutsideEast_EventScript_OldWomanSudowoodoGone
+	goto_if_set FLAG_SINK, BattleFrontier_OutsideEast_EventScript_OldWomanSudowoodoGone
 	msgbox BattleFrontier_OutsideEast_Text_OddTreeHereSeemsToWiggle, MSGBOX_DEFAULT
 	release
 	end
