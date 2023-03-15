@@ -37,6 +37,9 @@ struct TrainerMonNoItemDefaultMoves
     u16 iv;
     u8 lvl;
     u16 species;
+    u8 spreadEv;
+    u8 spreadIv;
+    u8 ability;
 };
 
 struct TrainerMonItemDefaultMoves
@@ -44,6 +47,9 @@ struct TrainerMonItemDefaultMoves
     u16 iv;
     u8 lvl;
     u16 species;
+    u8 spreadEv;
+    u8 spreadIv;
+    u8 ability;
     u16 heldItem;
 };
 
@@ -52,6 +58,9 @@ struct TrainerMonNoItemCustomMoves
     u16 iv;
     u8 lvl;
     u16 species;
+    u8 spreadEv;
+    u8 spreadIv;
+    u8 ability;
     u16 moves[MAX_MON_MOVES];
 };
 
@@ -60,6 +69,9 @@ struct TrainerMonItemCustomMoves
     u16 iv;
     u8 lvl;
     u16 species;
+    u8 spreadEv;
+    u8 spreadIv;
+    u8 ability;
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
 };
@@ -85,9 +97,12 @@ struct Trainer
     /*0x03*/ u8 trainerPic;
     /*0x04*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
     /*0x10*/ u16 items[MAX_TRAINER_ITEMS];
-    /*0x18*/ bool8 doubleBattle;
-    /*0x1C*/ u32 aiFlags;
-    /*0x20*/ u8 partySize;
+    /*0x18*/ u8 scalingCoeff:4;
+    /*0x18*/ bool8 doEvoMon:1;
+    /*0x18*/ bool8 doubleBattle:3;
+    /*0x19*/ u32 aiFlags;
+    /*0x2D*/ u8 partySize;
+    /*0x1E*/ u8 evCoeff;
     /*0x24*/ union TrainerMonPtr party;
 };
 
