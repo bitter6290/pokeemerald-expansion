@@ -888,7 +888,6 @@ void GetCurSecretBaseRegistrationValidity(void)
 void ToggleCurSecretBaseRegistry(void)
 {
     gSaveBlock1Ptr->secretBases[VarGet(VAR_CURRENT_SECRET_BASE)].registryStatus ^= 1;
-    FlagSet(FLAG_SECRET_BASE_REGISTRY_ENABLED);
 }
 
 void ShowSecretBaseDecorationMenu(void)
@@ -1708,62 +1707,6 @@ void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
 {
     struct SecretBaseRecordMixer mixers[3];
     u16 i;
-
-    if (FlagGet(FLAG_RECEIVED_SECRET_POWER))
-    {
-        switch (GetLinkPlayerCount())
-        {
-        case 2:
-            memset(secretBases + 2 * recordSize, 0, recordSize);
-            memset(secretBases + 3 * recordSize, 0, recordSize);
-            break;
-        case 3:
-            memset(secretBases + 3 * recordSize, 0, recordSize);
-            break;
-        }
-
-        switch (linkIdx)
-        {
-        case 0:
-            INIT_SECRET_BASE_RECORD_MIXER(1, 2, 3)
-            break;
-        case 1:
-            INIT_SECRET_BASE_RECORD_MIXER(2, 3, 0)
-            break;
-        case 2:
-            INIT_SECRET_BASE_RECORD_MIXER(3, 0, 1)
-            break;
-        case 3:
-            INIT_SECRET_BASE_RECORD_MIXER(0, 1, 2)
-            break;
-        }
-
-        SaveRecordMixBases(mixers);
-
-        for (i = 1; i < SECRET_BASES_COUNT; i++)
-        {
-            // In the process of deleting duplicate bases, if a base the player has registered is deleted it is
-            // flagged with the temporary toRegister flag, so it can be re-registered after it has been newly saved
-            if (gSaveBlock1Ptr->secretBases[i].toRegister == TRUE)
-            {
-                gSaveBlock1Ptr->secretBases[i].registryStatus = REGISTERED;
-                gSaveBlock1Ptr->secretBases[i].toRegister = FALSE;
-            }
-        }
-
-        for (i = 1; i < SECRET_BASES_COUNT; i++)
-        {
-            // Unmark "new" bases, they've been saved now and are no longer important
-            if (gSaveBlock1Ptr->secretBases[i].registryStatus == NEW)
-                gSaveBlock1Ptr->secretBases[i].registryStatus = UNREGISTERED;
-        }
-
-        if (gSaveBlock1Ptr->secretBases[0].secretBaseId != 0
-         && gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived != 0xFFFF)
-        {
-            gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived++;
-        }
-    }
 }
 
 void ClearJapaneseSecretBases(struct SecretBase *bases)

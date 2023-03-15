@@ -187,130 +187,6 @@ bool32 CountSSTidalStep(u16 delta)
 }
 
 
-bool32 ShouldDoWallyCall(void)
-{
-    if (FlagGet(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_WALLY_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoScottFortreeCall(void)
-{
-    if (FlagGet(FLAG_SCOTT_CALL_FORTREE_GYM))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoScottBattleFrontierCall(void)
-{
-    if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoRoxanneCall(void)
-{
-    if (FlagGet(FLAG_ENABLE_ROXANNE_FIRST_CALL))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_ROXANNE_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoRivalRayquazaCall(void)
-{
-    if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
 
 u8 GetLinkPartnerNames(void)
 {
@@ -1005,21 +881,6 @@ void EndLotteryCornerComputerEffect(void)
 #undef tTimer
 #undef tIsScreenOn
 
-void SetTrickHouseNuggetFlag(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagSet(flag);
-}
-
-void ResetTrickHouseNuggetFlag(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagClear(flag);
-}
 
 bool8 CheckLeadMonCool(void)
 {
@@ -1159,50 +1020,6 @@ u16 GetSlotMachineId(void)
     return sSlotMachineIds[rnd % SLOT_MACHINE_COUNT];
 }
 
-bool8 FoundAbandonedShipRoom1Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
-bool8 FoundAbandonedShipRoom2Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
-bool8 FoundAbandonedShipRoom4Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
-bool8 FoundAbandonedShipRoom6Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
 bool8 LeadMonHasEffortRibbon(void)
 {
     return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_EFFORT_RIBBON, NULL);
@@ -1324,11 +1141,6 @@ static void StopCameraShake(u8 taskId)
 #undef tNumShakes
 #undef tDelay
 #undef tVerticalPan
-
-bool8 FoundBlackGlasses(void)
-{
-    return FlagGet(FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES);
-}
 
 u8 GetLeadMonIndex(void)
 {
@@ -3084,31 +2896,6 @@ bool8 IsDestinationBoxFull(void)
     return FALSE;
 }
 
-void CreateAbnormalWeatherEvent(void)
-{
-    u16 randomValue = Random();
-    VarSet(VAR_ABNORMAL_WEATHER_STEP_COUNTER, 0);
-
-    if (FlagGet(FLAG_DEFEATED_KYOGRE) == TRUE)
-    {
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % TERRA_CAVE_LOCATIONS) + TERRA_CAVE_LOCATIONS_START);
-    }
-    else if (FlagGet(FLAG_DEFEATED_GROUDON) == TRUE)
-    {
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % MARINE_CAVE_LOCATIONS) + MARINE_CAVE_LOCATIONS_START);
-    }
-    else if ((randomValue & 1) == 0)
-    {
-        randomValue = Random();
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % TERRA_CAVE_LOCATIONS) + TERRA_CAVE_LOCATIONS_START);
-    }
-    else
-    {
-        randomValue = Random();
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % MARINE_CAVE_LOCATIONS) + MARINE_CAVE_LOCATIONS_START);
-    }
-}
-
 
 void Unused_SetWeatherSunny(void)
 {
@@ -3134,17 +2921,6 @@ u32 GetMartEmployeeObjectEventId(void)
         }
     }
     return 1;
-}
-
-bool32 IsTrainerRegistered(void)
-{
-    int index = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
-    if (index >= 0)
-    {
-        if (FlagGet(FLAG_MATCH_CALL_REGISTERED + index) == TRUE)
-            return TRUE;
-    }
-    return FALSE;
 }
 
 // Always returns FALSE
@@ -3478,22 +3254,6 @@ void TryLoseFansFromPlayTimeAfterLinkBattle(void)
     {
         TryLoseFansFromPlayTime();
         gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] = gSaveBlock2Ptr->playTimeHours;
-    }
-}
-
-void UpdateTrainerFanClubGameClear(void)
-{
-    if (!GET_TRAINER_FAN_CLUB_FLAG(FANCLUB_GOT_FIRST_FANS))
-    {
-        SetPlayerGotFirstFans();
-        SetInitialFansOfPlayer();
-        gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] = gSaveBlock2Ptr->playTimeHours;
-        FlagClear(FLAG_HIDE_FANCLUB_OLD_LADY);
-        FlagClear(FLAG_HIDE_FANCLUB_BOY);
-        FlagClear(FLAG_HIDE_FANCLUB_LITTLE_BOY);
-        FlagClear(FLAG_HIDE_FANCLUB_LADY);
-        FlagClear(FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER);
-        VarSet(VAR_LILYCOVE_FAN_CLUB_STATE, 1);
     }
 }
 

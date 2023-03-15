@@ -183,45 +183,6 @@ gStdScripts_End::
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
-	goto EventScript_ResetMrBriney
-	end
-
-EventScript_ResetMrBriney::
-	goto_if_eq VAR_BRINEY_LOCATION, 1, EventScript_MoveMrBrineyToHouse
-	goto_if_eq VAR_BRINEY_LOCATION, 2, EventScript_MoveMrBrineyToDewford
-	goto_if_eq VAR_BRINEY_LOCATION, 3, EventScript_MoveMrBrineyToRoute109
-	end
-
-EventScript_MoveMrBrineyToHouse::
-	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
-	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	end
-
-EventScript_MoveMrBrineyToDewford::
-	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	clearflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
-	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	end
-
-EventScript_MoveMrBrineyToRoute109::
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
-	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY
-	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
 	end
 
 EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
@@ -232,25 +193,6 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 	setvar VAR_ELITE_4_STATE, 0
 	return
 
-Common_EventScript_UpdateBrineyLocation::
-	goto_if_unset FLAG_RECEIVED_POKENAV, Common_EventScript_NopReturn
-	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Common_EventScript_NopReturn
-	goto_if_unset FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT, EventScript_SetBrineyLocation_House
-	goto_if_unset FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN, EventScript_SetBrineyLocation_Dewford
-	goto_if_unset FLAG_HIDE_ROUTE_109_MR_BRINEY, EventScript_SetBrineyLocation_Route109
-	return
-
-EventScript_SetBrineyLocation_House::
-	setvar VAR_BRINEY_LOCATION, 1
-	return
-
-EventScript_SetBrineyLocation_Dewford::
-	setvar VAR_BRINEY_LOCATION, 2
-	return
-
-EventScript_SetBrineyLocation_Route109::
-	setvar VAR_BRINEY_LOCATION, 3
-	return
 
 	.include "data/scripts/pkmn_center_nurse.inc"
 	.include "data/scripts/obtain_item.inc"
@@ -346,8 +288,6 @@ Common_EventScript_StopBrineysBoatMusic::
 	fadedefaultbgm
 	return
 
-	.include "data/scripts/prof_birch.inc"
-
 @ Below could be split as ferry.inc aside from the Rusturf tunnel script
 Common_EventScript_FerryDepart::
 	delay 60
@@ -365,17 +305,6 @@ Movement_FerryDepart:
 	walk_right
 	step_end
 
-EventScript_HideMrBriney::
-	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
-	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	setvar VAR_BRINEY_LOCATION, 0
-	return
 
 EventScript_UnusedBoardFerry::
 	delay 30
@@ -650,7 +579,6 @@ Common_Text_LookCloserAtMap:
 	.include "data/scripts/tv.inc"
 	.include "data/text/tv.inc"
 	.include "data/scripts/interview.inc"
-	.include "data/scripts/gabby_and_ty.inc"
 	.include "data/text/pokemon_news.inc"
 	.include "data/scripts/mauville_man.inc"
 	.include "data/scripts/field_move_scripts.inc"
@@ -674,15 +602,11 @@ Common_Text_LookCloserAtMap:
 	.include "data/scripts/cave_hole.inc"
 	.include "data/scripts/lilycove_lady.inc"
 	.include "data/text/match_call.inc"
-	.include "data/scripts/apprentice.inc"
-	.include "data/text/apprentice.inc"
 	.include "data/text/battle_dome.inc"
 	.include "data/scripts/battle_pike.inc"
 	.include "data/text/blend_master.inc"
 	.include "data/text/battle_tent.inc"
 	.include "data/text/event_ticket_2.inc"
-	.include "data/text/move_tutors.inc"
-	.include "data/scripts/move_tutors.inc"
 	.include "data/scripts/trainer_hill.inc"
 	.include "data/scripts/test_signpost.inc"
 	.include "data/text/frontier_brain.inc"

@@ -197,7 +197,6 @@ void NewGameInitData(void)
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
     InitLilycoveLady();
-    ResetAllApprenticeData();
     ClearRankingHallRecords();
     InitMatchCallCounters();
     ClearMysteryGift();

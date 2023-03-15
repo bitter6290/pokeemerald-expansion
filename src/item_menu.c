@@ -593,12 +593,6 @@ void CB2_GoToItemDepositMenu(void)
     GoToBagMenu(ITEMMENULOCATION_ITEMPC, POCKETS_COUNT, CB2_PlayerPCExitBagMenu);
 }
 
-void ApprenticeOpenBagMenu(void)
-{
-    GoToBagMenu(ITEMMENULOCATION_APPRENTICE, POCKETS_COUNT, CB2_ApprenticeExitBagMenu);
-    gSpecialVar_0x8005 = ITEM_NONE;
-    gSpecialVar_Result = FALSE;
-}
 
 void FavorLadyOpenBagMenu(void)
 {
@@ -2369,12 +2363,6 @@ static void ItemMenu_Show(u8 taskId)
     gSpecialVar_Result = TRUE;
     RemoveContextWindow();
     Task_FadeAndCloseBagMenu(taskId);
-}
-
-static void CB2_ApprenticeExitBagMenu(void)
-{
-    gFieldCallback = Apprentice_ScriptContext_Enable;
-    SetMainCallback2(CB2_ReturnToField);
 }
 
 static void ItemMenu_GiveFavorLady(u8 taskId)

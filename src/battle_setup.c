@@ -75,8 +75,6 @@ static void DoSafariBattle(void);
 static void DoStandardWildBattle(bool32 isDouble);
 static void CB2_EndWildBattle(void);
 static void CB2_EndScriptedWildBattle(void);
-static void TryUpdateGymLeaderRematchFromWild(void);
-static void TryUpdateGymLeaderRematchFromTrainer(void);
 static void CB2_GiveStarter(void);
 static void CB2_StartFirstBattle(void);
 static void CB2_EndFirstBattle(void);
@@ -340,7 +338,6 @@ static void DoStandardWildBattle(bool32 isDouble)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 void BattleSetup_StartRoamerBattle(void)
@@ -354,7 +351,6 @@ void BattleSetup_StartRoamerBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 static void DoSafariBattle(void)
@@ -378,7 +374,6 @@ static void DoBattlePikeWildBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 static void DoTrainerBattle(void)
@@ -386,7 +381,6 @@ static void DoTrainerBattle(void)
     CreateBattleStartTask(GetTrainerBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
-    TryUpdateGymLeaderRematchFromTrainer();
 }
 
 static void DoBattlePyramidTrainerHillBattle(void)
@@ -398,7 +392,6 @@ static void DoBattlePyramidTrainerHillBattle(void)
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
-    TryUpdateGymLeaderRematchFromTrainer();
 }
 
 // Initiates battle where Wally catches Ralts
@@ -420,7 +413,6 @@ void BattleSetup_StartScriptedWildBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 void BattleSetup_StartScriptedDoubleWildBattle(void)
@@ -432,7 +424,6 @@ void BattleSetup_StartScriptedDoubleWildBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 void BattleSetup_StartLatiBattle(void)
@@ -444,7 +435,6 @@ void BattleSetup_StartLatiBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 void BattleSetup_StartLegendaryBattle(void)
@@ -483,7 +473,6 @@ void BattleSetup_StartLegendaryBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 void StartGroudonKyogreBattle(void)
@@ -500,7 +489,6 @@ void StartGroudonKyogreBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 void StartRegiBattle(void)
@@ -533,7 +521,6 @@ void StartRegiBattle(void)
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
-    TryUpdateGymLeaderRematchFromWild();
 }
 
 static void CB2_EndWildBattle(void)
@@ -878,7 +865,6 @@ static void CB2_StartFirstBattle(void)
         IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
         IncrementGameStat(GAME_STAT_WILD_BATTLES);
         IncrementDailyWildBattles();
-        TryUpdateGymLeaderRematchFromWild();
     }
 }
 
@@ -888,17 +874,6 @@ static void CB2_EndFirstBattle(void)
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
-static void TryUpdateGymLeaderRematchFromWild(void)
-{
-    if (GetGameStat(GAME_STAT_WILD_BATTLES) % 60 == 0)
-        UpdateGymLeaderRematch();
-}
-
-static void TryUpdateGymLeaderRematchFromTrainer(void)
-{
-    if (GetGameStat(GAME_STAT_TRAINER_BATTLES) % 20 == 0)
-        UpdateGymLeaderRematch();
-}
 
 // why not just use the macros? maybe its because they didnt want to uncast const every time?
 static u32 TrainerBattleLoadArg32(const u8 *ptr)
@@ -1518,7 +1493,7 @@ static bool32 IsRematchForbidden(s32 rematchTableId)
     if (rematchTableId >= REMATCH_ELITE_FOUR_ENTRIES)
         return TRUE;
     else if (rematchTableId == REMATCH_WALLY_VR)
-        return !FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD);
+        return FALSE;
     else
         return FALSE;
 }
@@ -1690,7 +1665,7 @@ static u32 GetTrainerMatchCallFlag(u32 trainerId)
     for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
     {
         if (gRematchTable[i].trainerIds[0] == trainerId)
-            return FLAG_MATCH_CALL_REGISTERED + i;
+            return i;
     }
 
     return 0xFFFF;
@@ -1698,12 +1673,7 @@ static u32 GetTrainerMatchCallFlag(u32 trainerId)
 
 static void RegisterTrainerInMatchCall(void)
 {
-    if (FlagGet(FLAG_HAS_MATCH_CALL))
-    {
-        u32 matchCallFlagId = GetTrainerMatchCallFlag(gTrainerBattleOpponent_A);
-        if (matchCallFlagId != 0xFFFF)
-            FlagSet(matchCallFlagId);
-    }
+
 }
 
 static bool8 WasSecondRematchWon(const struct RematchTrainer *table, u16 firstBattleTrainerId)

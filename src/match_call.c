@@ -1069,16 +1069,6 @@ static bool32 MapAllowsMatchCall(void)
     if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE)
         return FALSE;
 
-    if (gMapHeader.regionMapSectionId == MAPSEC_SOOTOPOLIS_CITY
-     && FlagGet(FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA) == TRUE
-     && FlagGet(FLAG_NEVER_SET_0x0DC) == FALSE)
-        return FALSE;
-
-    if (gMapHeader.regionMapSectionId == MAPSEC_MT_CHIMNEY
-     && FlagGet(FLAG_MET_ARCHIE_METEOR_FALLS) == TRUE
-     && FlagGet(FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY) == FALSE)
-        return FALSE;
-
     return TRUE;
 }
 
@@ -1116,14 +1106,7 @@ static bool32 SelectMatchCallTrainer(void)
 
 static u32 GetNumRegisteredNPCs(void)
 {
-    u32 i, count;
-    for (i = 0, count = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
-    {
-        if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i))
-            count++;
-    }
-
-    return count;
+    return 0;
 }
 
 static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
@@ -1131,13 +1114,6 @@ static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
     u32 i;
     for (i = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
     {
-        if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i))
-        {
-            if (!activeMatchCallId)
-                return gRematchTable[i].trainerIds[0];
-
-            activeMatchCallId--;
-        }
     }
 
     return REMATCH_TABLE_ENTRIES;
@@ -1154,16 +1130,6 @@ static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
 */
 bool32 TryStartMatchCall(void)
 {
-    if (FlagGet(FLAG_HAS_MATCH_CALL)
-        && UpdateMatchCallStepCounter()
-        && UpdateMatchCallMinutesCounter()
-        && CheckMatchCallChance()
-        && MapAllowsMatchCall()
-        && SelectMatchCallTrainer())
-    {
-        StartMatchCall();
-        return TRUE;
-    }
 
     return FALSE;
 }

@@ -178,7 +178,6 @@ gSpecials::
 	def_special TryLoseFansFromPlayTimeAfterLinkBattle
 	def_special TryLoseFansFromPlayTime
 	def_special SetPlayerGotFirstFans
-	def_special UpdateTrainerFanClubGameClear
 	def_special Script_TryGainNewFanFromCounter
 	def_special RockSmashWildEncounter
 	def_special GabbyAndTyGetBattleNum
@@ -264,8 +263,6 @@ gSpecials::
 	def_special RetrieveLotteryNumber
 	def_special PickLotteryCornerTicket
 	def_special ShowBerryBlenderRecordWindow
-	def_special ResetTrickHouseNuggetFlag
-	def_special SetTrickHouseNuggetFlag
 	def_special ScriptMenu_CreatePCMultichoice
 	def_special AccessHallOfFamePC
 	def_special Special_ShowDiploma
@@ -291,10 +288,6 @@ gSpecials::
 	def_special BufferEReaderTrainerName
 	def_special GetSlotMachineId
 	def_special GetPlayerFacingDirection
-	def_special FoundAbandonedShipRoom1Key
-	def_special FoundAbandonedShipRoom2Key
-	def_special FoundAbandonedShipRoom4Key
-	def_special FoundAbandonedShipRoom6Key
 	def_special LeadMonHasEffortRibbon
 	def_special GiveLeadMonEffortRibbon
 	def_special Special_AreLeadMonEVsMaxedOut
@@ -318,7 +311,6 @@ gSpecials::
 	def_special StartRegiBattle
 	def_special SetTrainerFacingDirection
 	def_special DoSealedChamberShakingEffect_Short
-	def_special FoundBlackGlasses
 	def_special StartDroughtWeatherBlend
 	def_special DoDiveWarp
 	def_special DoFallWarp
@@ -405,7 +397,6 @@ gSpecials::
 	def_special GetContestLadyCategory
 	def_special PutLilycoveContestLadyShowOnTheAir
 	def_special CloseBattlePikeCurtain
-	def_special CallApprenticeFunction
 	def_special ShouldTryGetTrainerScript
 	def_special ShowMapNamePopup
 	def_special ShowMapNamePopup
@@ -485,7 +476,6 @@ gSpecials::
 	def_special SaveForBattleTowerLink
 	def_special Unused_SetWeatherSunny
 	def_special SetUnlockedPokedexFlags
-	def_special IsTrainerRegistered
 	def_special ShouldDoBrailleRegicePuzzle
 	def_special EnableNationalPokedex
 	def_special ScriptMenu_CreateLilycoveSSTidalMultichoice
