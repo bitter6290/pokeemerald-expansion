@@ -908,13 +908,13 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(GLASTRIER, gMonBackPic_Glastrier),
     SPECIES_SPRITE(SPECTRIER, gMonBackPic_Spectrier),
     SPECIES_SPRITE(CALYREX, gMonBackPic_Calyrex),
-    SPECIES_SPRITE(WYRDEER, gMonBackPic_CircledQuestionMark), //gMonBackPic_Wyrdeer),
+    SPECIES_SPRITE(WYRDEER, gMonBackPic_Wyrdeer),
     SPECIES_SPRITE(KLEAVOR, gMonBackPic_Kleavor),
     SPECIES_SPRITE(URSALUNA, gMonBackPic_Ursaluna),
-    SPECIES_SPRITE(BASCULEGION, gMonBackPic_CircledQuestionMark), //gMonBackPic_Basculegion),
-    SPECIES_SPRITE(SNEASLER, gMonBackPic_CircledQuestionMark), //gMonBackPic_Sneasler),
+    SPECIES_SPRITE(BASCULEGION, gMonBackPic_Basculegion),
+    SPECIES_SPRITE(SNEASLER, gMonBackPic_Sneasler),
     SPECIES_SPRITE(OVERQWIL, gMonBackPic_Overqwil),
-    SPECIES_SPRITE(ENAMORUS, gMonBackPic_CircledQuestionMark), //gMonBackPic_Enamorus),
+    SPECIES_SPRITE(ENAMORUS, gMonBackPic_Enamorus),
 #endif
 
     SPECIES_SPRITE(VENUSAUR_MEGA, gMonBackPic_VenusaurMega),
@@ -1024,7 +1024,7 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(QWILFISH_HISUIAN, gMonBackPic_QwilfishHisuian),
     SPECIES_SPRITE(SNEASEL_HISUIAN, gMonBackPic_SneaselHisuian),
 #if P_GEN_5_POKEMON == TRUE
-    SPECIES_SPRITE(SAMUROTT_HISUIAN, gMonBackPic_CircledQuestionMark), //gMonBackPic_SamurottHisuian),
+    SPECIES_SPRITE(SAMUROTT_HISUIAN, gMonBackPic_SamurottHisuian),
     SPECIES_SPRITE(LILLIGANT_HISUIAN, gMonBackPic_LilligantHisuian),
     SPECIES_SPRITE(ZORUA_HISUIAN, gMonBackPic_ZoruaHisuian),
     SPECIES_SPRITE(ZOROARK_HISUIAN, gMonBackPic_ZoroarkHisuian),
@@ -1036,7 +1036,7 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(AVALUGG_HISUIAN, gMonBackPic_AvaluggHisuian),
 #endif
 #if P_GEN_8_POKEMON == TRUE
-    SPECIES_SPRITE(DECIDUEYE_HISUIAN, gMonBackPic_CircledQuestionMark), //gMonBackPic_DecidueyeHisuian),
+    SPECIES_SPRITE(DECIDUEYE_HISUIAN, gMonBackPic_DecidueyeHisuian),
 #endif
 
     SPECIES_SPRITE(PIKACHU_COSPLAY, gMonBackPic_PikachuCosplay),
@@ -1331,8 +1331,58 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(CALYREX_ICE_RIDER, gMonBackPic_CalyrexIceRider),
     SPECIES_SPRITE(CALYREX_SHADOW_RIDER, gMonBackPic_CalyrexShadowRider),
 
-    SPECIES_SPRITE(ENAMORUS_THERIAN, gMonBackPic_CircledQuestionMark), //gMonBackPic_EnamorusTherian),
+    SPECIES_SPRITE(ENAMORUS_THERIAN, gMonBackPic_EnamorusTherian),
+
+    SPECIES_SPRITE(BASCULEGION_FEMALE, gMonBackPic_BasculegionFemale),
 #endif
+// Custom
+	SPECIES_SPRITE(KRICKALLOUS, gMonBackPic_Krickallous),
+	SPECIES_SPRITE(KRICKETON, gMonBackPic_Kricketon),
+	SPECIES_SPRITE(LEDENNA, gMonBackPic_Ledenna),
+	SPECIES_SPRITE(ALOOBAT, gMonBackPic_Aloobat),
+	SPECIES_SPRITE(MORADILE, gMonBackPic_Moradile),
+	SPECIES_SPRITE(POLTENDULA, gMonBackPic_Poltendula),
+	SPECIES_SPRITE(ARIDOSPID, gMonBackPic_Aridospid),
+	SPECIES_SPRITE(FAUVANTIC, gMonBackPic_Fauvantic),
+	SPECIES_SPRITE(FLORESTIC, gMonBackPic_Florestic),
+	SPECIES_SPRITE(TERRANTIC, gMonBackPic_Terrantic),
+	SPECIES_SPRITE(AUREATIC, gMonBackPic_Aureatic),
+	SPECIES_SPRITE(WINTER_PLUME, gMonBackPic_WinterPlume),
+	SPECIES_SPRITE(IRON_CORDS, gMonBackPic_IronCords),
+	SPECIES_SPRITE(SHINX_KANTO, gMonBackPic_ShinxKanto),
+	SPECIES_SPRITE(LUXIO_KANTO, gMonBackPic_LuxioKanto),
+	SPECIES_SPRITE(LUXRAY_KANTO, gMonBackPic_LuxrayKanto),
+	SPECIES_SPRITE(TIMBURR_KANTO, gMonBackPic_TimburrKanto),
+	SPECIES_SPRITE(GURDURR_KANTO, gMonBackPic_GurdurrKanto),
+	SPECIES_SPRITE(CONKELDURR_KANTO, gMonBackPic_ConkeldurrKanto),
+	SPECIES_SPRITE(LITWICK_KANTO, gMonBackPic_LitwickKanto),
+	SPECIES_SPRITE(LAMPENT_KANTO, gMonBackPic_LampentKanto),
+	SPECIES_SPRITE(CHANDELURE_KANTO, gMonBackPic_ChandelureKanto),
+	SPECIES_SPRITE(TORKOAL_KANTO, gMonBackPic_TorkoalKanto),
+	SPECIES_SPRITE(SANDYGAST_KANTO, gMonBackPic_SandygastKanto),
+	SPECIES_SPRITE(SANDILE_KANTO, gMonBackPic_SandileKanto),
+	SPECIES_SPRITE(KROKOROK_KANTO, gMonBackPic_KrokorokKanto),
+	SPECIES_SPRITE(SURSKIT_KANTO, gMonBackPic_SurskitKanto),
+	SPECIES_SPRITE(MASQUERAIN_KANTO, gMonBackPic_MasquerainKanto),
+	SPECIES_SPRITE(GIBLE_KANTO, gMonBackPic_GibleKanto),
+	SPECIES_SPRITE(GABITE_KANTO, gMonBackPic_GabiteKanto),
+	SPECIES_SPRITE(GARCHOMP_KANTO, gMonBackPic_GarchompKanto),
+	SPECIES_SPRITE(ARBOK_MEGA, gMonBackPic_ArbokMega),
+	SPECIES_SPRITE(BLASTOISE_MEGA_Y, gMonBackPic_BlastoiseMegaY),
+	SPECIES_SPRITE(VENUSAUR_MEGA_Y, gMonBackPic_VenusaurMegaY),
+	SPECIES_SPRITE(OMASTAR_MEGA, gMonBackPic_OmastarMega),
+	SPECIES_SPRITE(KABUTOPS_MEGA, gMonBackPic_KabutopsMega),
+	SPECIES_SPRITE(FLAREON_MEGA, gMonBackPic_FlareonMega),
+	SPECIES_SPRITE(VAPOREON_MEGA, gMonBackPic_VaporeonMega),
+	SPECIES_SPRITE(JOLTEON_MEGA, gMonBackPic_JolteonMega),
+	SPECIES_SPRITE(ESPEON_MEGA, gMonBackPic_EspeonMega),
+	SPECIES_SPRITE(UMBREON_MEGA, gMonBackPic_UmbreonMega),
+	SPECIES_SPRITE(LEAFEON_MEGA, gMonBackPic_LeafeonMega),
+	SPECIES_SPRITE(GLACEON_MEGA, gMonBackPic_GlaceonMega),
+	SPECIES_SPRITE(SYLVEON_MEGA, gMonBackPic_SylveonMega),
+	SPECIES_SPRITE(CROBAT_MEGA, gMonBackPic_CrobatMega),
+	SPECIES_SPRITE(RAPIDASH_MEGA, gMonBackPic_RapidashMega),
+// Egg
     SPECIES_SPRITE(EGG, gMonFrontPic_Egg),
 };
 
@@ -1358,8 +1408,5 @@ const struct CompressedSpriteSheet gMonBackPicTableFemale[] =
 #endif
 #if P_GEN_6_POKEMON == TRUE
     SPECIES_SPRITE(PYROAR, gMonBackPic_PyroarF),
-#endif
-#if P_GEN_8_POKEMON == TRUE
-    SPECIES_SPRITE(BASCULEGION, gMonBackPic_CircledQuestionMark), //gMonBackPic_BasculegionF),
 #endif
 };

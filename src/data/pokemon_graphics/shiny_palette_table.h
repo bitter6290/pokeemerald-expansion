@@ -908,13 +908,13 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(GLASTRIER, gMonShinyPalette_Glastrier),
     SPECIES_SHINY_PAL(SPECTRIER, gMonShinyPalette_Spectrier),
     SPECIES_SHINY_PAL(CALYREX, gMonShinyPalette_Calyrex),
-    SPECIES_SHINY_PAL(WYRDEER, gMonShinyPalette_CircledQuestionMark), // gMonShinyPalette_Wyrdeer),
+    SPECIES_SHINY_PAL(WYRDEER, gMonShinyPalette_Wyrdeer),
     SPECIES_SHINY_PAL(KLEAVOR, gMonShinyPalette_Kleavor),
     SPECIES_SHINY_PAL(URSALUNA, gMonShinyPalette_Ursaluna),
-    SPECIES_SHINY_PAL(BASCULEGION, gMonShinyPalette_CircledQuestionMark), // gMonShinyPalette_Basculegion),
-    SPECIES_SHINY_PAL(SNEASLER, gMonShinyPalette_CircledQuestionMark), // gMonShinyPalette_Sneasler),
+    SPECIES_SHINY_PAL(BASCULEGION, gMonShinyPalette_Basculegion),
+    SPECIES_SHINY_PAL(SNEASLER, gMonShinyPalette_Sneasler),
     SPECIES_SHINY_PAL(OVERQWIL, gMonShinyPalette_Overqwil),
-    SPECIES_SHINY_PAL(ENAMORUS, gMonShinyPalette_CircledQuestionMark), // gMonShinyPalette_Enamorus),
+    SPECIES_SHINY_PAL(ENAMORUS, gMonShinyPalette_Enamorus),
 #endif
 
     SPECIES_SHINY_PAL(VENUSAUR_MEGA, gMonShinyPalette_VenusaurMega),
@@ -1024,7 +1024,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(QWILFISH_HISUIAN, gMonShinyPalette_QwilfishHisuian),
     SPECIES_SHINY_PAL(SNEASEL_HISUIAN, gMonShinyPalette_SneaselHisuian),
 #if P_GEN_5_POKEMON == TRUE
-    SPECIES_SHINY_PAL(SAMUROTT_HISUIAN, gMonShinyPalette_CircledQuestionMark), //gMonShinyPalette_SamurottHisuian),
+    SPECIES_SHINY_PAL(SAMUROTT_HISUIAN, gMonShinyPalette_SamurottHisuian),
     SPECIES_SHINY_PAL(LILLIGANT_HISUIAN, gMonShinyPalette_LilligantHisuian),
     SPECIES_SHINY_PAL(ZORUA_HISUIAN, gMonShinyPalette_ZoruaHisuian),
     SPECIES_SHINY_PAL(ZOROARK_HISUIAN, gMonShinyPalette_ZoroarkHisuian),
@@ -1036,7 +1036,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(AVALUGG_HISUIAN, gMonShinyPalette_AvaluggHisuian),
 #endif
 #if P_GEN_7_POKEMON == TRUE
-    SPECIES_SHINY_PAL(DECIDUEYE_HISUIAN, gMonShinyPalette_CircledQuestionMark), //gMonShinyPalette_DecidueyeHisuian),
+    SPECIES_SHINY_PAL(DECIDUEYE_HISUIAN, gMonShinyPalette_DecidueyeHisuian),
 #endif
 
     SPECIES_SHINY_PAL(PIKACHU_COSPLAY, gMonShinyPalette_PikachuCosplay),
@@ -1329,8 +1329,57 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(CALYREX_ICE_RIDER, gMonShinyPalette_CalyrexIceRider),
     SPECIES_SHINY_PAL(CALYREX_SHADOW_RIDER, gMonShinyPalette_CalyrexShadowRider),
 
-    SPECIES_SHINY_PAL(ENAMORUS_THERIAN, gMonShinyPalette_CircledQuestionMark), //gMonShinyPalette_EnamorusTherian),
+    SPECIES_SHINY_PAL(BASCULEGION_FEMALE, gMonShinyPalette_BasculegionFemale),
+    SPECIES_SHINY_PAL(ENAMORUS_THERIAN, gMonShinyPalette_EnamorusTherian),
 #endif
+// Custom
+	SPECIES_SHINY_PAL(KRICKALLOUS, gMonShinyPalette_Krickallous),
+	SPECIES_SHINY_PAL(KRICKETON, gMonShinyPalette_Kricketon),
+	SPECIES_SHINY_PAL(LEDENNA, gMonShinyPalette_Ledenna),
+	SPECIES_SHINY_PAL(ALOOBAT, gMonShinyPalette_Aloobat),
+	SPECIES_SHINY_PAL(MORADILE, gMonShinyPalette_Moradile),
+	SPECIES_SHINY_PAL(POLTENDULA, gMonShinyPalette_Poltendula),
+	SPECIES_SHINY_PAL(ARIDOSPID, gMonShinyPalette_Aridospid),
+	SPECIES_SHINY_PAL(FAUVANTIC, gMonShinyPalette_Fauvantic),
+	SPECIES_SHINY_PAL(FLORESTIC, gMonShinyPalette_Florestic),
+	SPECIES_SHINY_PAL(TERRANTIC, gMonShinyPalette_Terrantic),
+	SPECIES_SHINY_PAL(AUREATIC, gMonShinyPalette_Aureatic),
+	SPECIES_SHINY_PAL(WINTER_PLUME, gMonShinyPalette_WinterPlume),
+	SPECIES_SHINY_PAL(IRON_CORDS, gMonShinyPalette_IronCords),
+	SPECIES_SHINY_PAL(SHINX_KANTO, gMonShinyPalette_ShinxKanto),
+	SPECIES_SHINY_PAL(LUXIO_KANTO, gMonShinyPalette_LuxioKanto),
+	SPECIES_SHINY_PAL(LUXRAY_KANTO, gMonShinyPalette_LuxrayKanto),
+	SPECIES_SHINY_PAL(TIMBURR_KANTO, gMonShinyPalette_TimburrKanto),
+	SPECIES_SHINY_PAL(GURDURR_KANTO, gMonShinyPalette_GurdurrKanto),
+	SPECIES_SHINY_PAL(CONKELDURR_KANTO, gMonShinyPalette_ConkeldurrKanto),
+	SPECIES_SHINY_PAL(LITWICK_KANTO, gMonShinyPalette_LitwickKanto),
+	SPECIES_SHINY_PAL(LAMPENT_KANTO, gMonShinyPalette_LampentKanto),
+	SPECIES_SHINY_PAL(CHANDELURE_KANTO, gMonShinyPalette_ChandelureKanto),
+	SPECIES_SHINY_PAL(TORKOAL_KANTO, gMonShinyPalette_TorkoalKanto),
+	SPECIES_SHINY_PAL(SANDYGAST_KANTO, gMonShinyPalette_SandygastKanto),
+	SPECIES_SHINY_PAL(SANDILE_KANTO, gMonShinyPalette_SandileKanto),
+	SPECIES_SHINY_PAL(KROKOROK_KANTO, gMonShinyPalette_KrokorokKanto),
+	SPECIES_SHINY_PAL(SURSKIT_KANTO, gMonShinyPalette_SurskitKanto),
+	SPECIES_SHINY_PAL(MASQUERAIN_KANTO, gMonShinyPalette_MasquerainKanto),
+	SPECIES_SHINY_PAL(GIBLE_KANTO, gMonShinyPalette_GibleKanto),
+	SPECIES_SHINY_PAL(GABITE_KANTO, gMonShinyPalette_GabiteKanto),
+	SPECIES_SHINY_PAL(GARCHOMP_KANTO, gMonShinyPalette_GarchompKanto),
+	SPECIES_SHINY_PAL(ARBOK_MEGA, gMonShinyPalette_ArbokMega),
+	SPECIES_SHINY_PAL(BLASTOISE_MEGA_Y, gMonShinyPalette_BlastoiseMegaY),
+	SPECIES_SHINY_PAL(VENUSAUR_MEGA_Y, gMonShinyPalette_VenusaurMegaY),
+	SPECIES_SHINY_PAL(OMASTAR_MEGA, gMonShinyPalette_OmastarMega),
+	SPECIES_SHINY_PAL(KABUTOPS_MEGA, gMonShinyPalette_KabutopsMega),
+	SPECIES_SHINY_PAL(FLAREON_MEGA, gMonShinyPalette_FlareonMega),
+	SPECIES_SHINY_PAL(VAPOREON_MEGA, gMonShinyPalette_VaporeonMega),
+	SPECIES_SHINY_PAL(JOLTEON_MEGA, gMonShinyPalette_JolteonMega),
+	SPECIES_SHINY_PAL(ESPEON_MEGA, gMonShinyPalette_EspeonMega),
+	SPECIES_SHINY_PAL(UMBREON_MEGA, gMonShinyPalette_UmbreonMega),
+	SPECIES_SHINY_PAL(LEAFEON_MEGA, gMonShinyPalette_LeafeonMega),
+	SPECIES_SHINY_PAL(GLACEON_MEGA, gMonShinyPalette_GlaceonMega),
+	SPECIES_SHINY_PAL(SYLVEON_MEGA, gMonShinyPalette_SylveonMega),
+	SPECIES_SHINY_PAL(CROBAT_MEGA, gMonShinyPalette_CrobatMega),
+	SPECIES_SHINY_PAL(RAPIDASH_MEGA, gMonShinyPalette_RapidashMega),
+// Egg
     SPECIES_SHINY_PAL(EGG, gMonPalette_Egg),
 };
 
@@ -1356,8 +1405,5 @@ const struct CompressedSpritePalette gMonShinyPaletteTableFemale[] =
 #endif
 #if P_GEN_6_POKEMON == TRUE
     SPECIES_SHINY_PAL(PYROAR, gMonShinyPalette_Pyroar),
-#endif
-#if P_GEN_8_POKEMON == TRUE
-    SPECIES_SHINY_PAL(BASCULEGION, gMonShinyPalette_CircledQuestionMark), // gMonShinyPalette_BasculegionF),
 #endif
 };

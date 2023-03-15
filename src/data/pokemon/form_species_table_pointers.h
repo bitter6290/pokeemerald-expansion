@@ -171,6 +171,7 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_ZARUDE] = sZarudeFormSpeciesIdTable,
     [SPECIES_CALYREX] = sCalyrexFormSpeciesIdTable,
     [SPECIES_ENAMORUS] = sEnamorusFormSpeciesIdTable,
+    [SPECIES_BASCULEGION] = sBasculegionFormSpeciesIdTable,
 #endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurFormSpeciesIdTable,
@@ -590,5 +591,37 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexFormSpeciesIdTable,
     // Enamorus
     [SPECIES_ENAMORUS_THERIAN] = sEnamorusFormSpeciesIdTable,
+    // Basculegion
+    [SPECIES_BASCULEGION_FEMALE] = sBasculegionFormSpeciesIdTable,
 #endif
+	// Custom
+	[SPECIES_SHINX] = sShinxFormSpeciesIdTable,
+	[SPECIES_LUXIO] = sLuxioFormSpeciesIdTable,
+	[SPECIES_LUXRAY] = sLuxrayFormSpeciesIdTable,
+	[SPECIES_TIMBURR] = sTimburrFormSpeciesIdTable,
+	[SPECIES_GURDURR] = sGurdurrFormSpeciesIdTable,
+	[SPECIES_CONKELDURR] = sConkeldurrFormSpeciesIdTable,
+	[SPECIES_LITWICK] = sLitwickFormSpeciesIdTable,
+	[SPECIES_LAMPENT] = sLampentFormSpeciesIdTable,
+	[SPECIES_CHANDELURE] = sChandelureFormSpeciesIdTable,
+	[SPECIES_TORKOAL] = sTorkoalFormSpeciesIdTable,
+	[SPECIES_SANDYGAST] = sSandygastFormSpeciesIdTable,
+	[SPECIES_SANDILE] = sSandileFormSpeciesIdTable,
+	[SPECIES_KROKOROK] = sKrokorokFormSpeciesIdTable,
+	[SPECIES_SURSKIT] = sSurskitFormSpeciesIdTable,
+	[SPECIES_MASQUERAIN] = sMasquerainFormSpeciesIdTable,
+	[SPECIES_GIBLE] = sGibleFormSpeciesIdTable,
+	[SPECIES_GABITE] = sGabiteFormSpeciesIdTable,
+	[SPECIES_ARBOK] = sArbokFormSpeciesIdTable,
+	[SPECIES_OMASTAR] = sOmastarFormSpeciesIdTable,
+	[SPECIES_KABUTOPS] = sKabutopsFormSpeciesIdTable,
+	[SPECIES_FLAREON] = sFlareonFormSpeciesIdTable,
+	[SPECIES_VAPOREON] = sVaporeonFormSpeciesIdTable,
+	[SPECIES_JOLTEON] = sJolteonFormSpeciesIdTable,
+	[SPECIES_ESPEON] = sEspeonFormSpeciesIdTable,
+	[SPECIES_UMBREON] = sUmbreonFormSpeciesIdTable,
+	[SPECIES_LEAFEON] = sLeafeonFormSpeciesIdTable,
+	[SPECIES_GLACEON] = sGlaceonFormSpeciesIdTable,
+	[SPECIES_SYLVEON] = sSylveonFormSpeciesIdTable,
+	[SPECIES_CROBAT] = sCrobatFormSpeciesIdTable,
 };
