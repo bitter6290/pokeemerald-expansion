@@ -169,24 +169,12 @@ u16 GetPlayerAvatarBike(void)
 void SetSSTidalFlag(void)
 {
     FlagSet(FLAG_SYS_CRUISE_MODE);
-    *GetVarPointer(VAR_CRUISE_STEP_COUNT) = 0;
 }
 
 void ResetSSTidalFlag(void)
 {
     FlagClear(FLAG_SYS_CRUISE_MODE);
 }
-
-// Returns TRUE if the Cruise is over
-bool32 CountSSTidalStep(u16 delta)
-{
-    if (!FlagGet(FLAG_SYS_CRUISE_MODE) || (*GetVarPointer(VAR_CRUISE_STEP_COUNT) += delta) < SS_TIDAL_MAX_STEPS)
-        return FALSE;
-
-    return TRUE;
-}
-
-
 
 u8 GetLinkPartnerNames(void)
 {
@@ -1168,7 +1156,7 @@ void TryInitBattleTowerAwardManObjectEvent(void)
 
 u16 GetDaysUntilPacifidlogTMAvailable(void)
 {
-    u16 tmReceivedDay = VarGet(VAR_PACIFIDLOG_TM_RECEIVED_DAY);
+    u16 tmReceivedDay = VarGet(VAR_SINK);
     if (gLocalTime.days - tmReceivedDay >= 7)
         return 0;
     else if (gLocalTime.days < 0)
@@ -1179,7 +1167,7 @@ u16 GetDaysUntilPacifidlogTMAvailable(void)
 
 u16 SetPacifidlogTMReceivedDay(void)
 {
-    VarSet(VAR_PACIFIDLOG_TM_RECEIVED_DAY, gLocalTime.days);
+    VarSet(VAR_SINK, gLocalTime.days);
     return gLocalTime.days;
 }
 
@@ -1585,7 +1573,7 @@ bool32 PlayerNotAtTrainerHillEntrance(void)
 
 void UpdateFrontierManiac(u16 daysSince)
 {
-    u16 *var = GetVarPointer(VAR_FRONTIER_MANIAC_FACILITY);
+    u16 *var = GetVarPointer(VAR_SINK);
     *var += daysSince;
     *var %= FRONTIER_MANIAC_FACILITY_COUNT;
 }
@@ -1672,7 +1660,7 @@ void ShowFrontierManiacMessage(void)
 
     u8 i;
     u16 winStreak = 0;
-    u16 facility = VarGet(VAR_FRONTIER_MANIAC_FACILITY);
+    u16 facility = VarGet(VAR_SINK);
 
     switch (facility)
     {
@@ -2349,7 +2337,7 @@ void ShowNatureGirlMessage(void)
 
 void UpdateFrontierGambler(u16 daysSince)
 {
-    u16 *var = GetVarPointer(VAR_FRONTIER_GAMBLER_CHALLENGE);
+    u16 *var = GetVarPointer(VAR_SINK);
     *var += daysSince;
     *var %= FRONTIER_GAMBLER_CHALLENGE_COUNT;
 }
@@ -2372,9 +2360,9 @@ void ShowFrontierGamblerLookingMessage(void)
         BattleFrontier_Lounge3_Text_ChallengeBattlePyramid,
     };
 
-    u16 challenge = VarGet(VAR_FRONTIER_GAMBLER_CHALLENGE);
+    u16 challenge = VarGet(VAR_SINK);
     ShowFieldMessage(sFrontierGamblerLookingMessages[challenge]);
-    VarSet(VAR_FRONTIER_GAMBLER_SET_CHALLENGE, challenge);
+    VarSet(VAR_SINK, challenge);
 }
 
 void ShowFrontierGamblerGoMessage(void)
@@ -2395,7 +2383,7 @@ void ShowFrontierGamblerGoMessage(void)
         BattleFrontier_Lounge3_Text_GetToBattlePyramid,
     };
 
-    ShowFieldMessage(sFrontierGamblerGoMessages[VarGet(VAR_FRONTIER_GAMBLER_SET_CHALLENGE)]);
+    ShowFieldMessage(sFrontierGamblerGoMessages[VarGet(VAR_SINK)]);
 }
 
 void FrontierGamblerSetWonOrLost(bool8 won)
@@ -2417,17 +2405,17 @@ void FrontierGamblerSetWonOrLost(bool8 won)
     };
 
     u16 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
-    u16 challenge = VarGet(VAR_FRONTIER_GAMBLER_SET_CHALLENGE);
+    u16 challenge = VarGet(VAR_SINK);
     u16 frontierFacilityId = VarGet(VAR_FRONTIER_FACILITY);
 
-    if (VarGet(VAR_FRONTIER_GAMBLER_STATE) == FRONTIER_GAMBLER_PLACED_BET)
+    if (VarGet(VAR_SINK) == FRONTIER_GAMBLER_PLACED_BET)
     {
         if (sFrontierChallenges[challenge] ==  FRONTIER_CHALLENGE(frontierFacilityId, battleMode))
         {
             if (won)
-                VarSet(VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_WON);
+                VarSet(VAR_SINK, FRONTIER_GAMBLER_WON);
             else
-                VarSet(VAR_FRONTIER_GAMBLER_STATE, FRONTIER_GAMBLER_LOST);
+                VarSet(VAR_SINK, FRONTIER_GAMBLER_LOST);
         }
     }
 }
@@ -2926,7 +2914,7 @@ u32 GetMartEmployeeObjectEventId(void)
 // Always returns FALSE
 bool32 ShouldDistributeEonTicket(void)
 {
-    if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
+    if (!VarGet(VAR_SINK))
         return FALSE;
 
     return TRUE;
@@ -3219,11 +3207,11 @@ bool8 InPokemonCenter(void)
       Bit     8: Flag set after receiving the initial 3 fans
       Bits 9-16: Flags for each of the 8 club members, set to 1 when theyre a fan of the player and 0 when theyre not
 
-    VAR_FANCLUB_LOSE_FAN_TIMER, a timer for when to lose fans
+    VAR_SINK, a timer for when to lose fans
       Compared against playTimeHours. When theyre equal, a fan is ready to be lost
       For every fan thats lost this way 12 hours are added to the timer
 
-    VAR_LILYCOVE_FAN_CLUB_STATE
+    VAR_SINK
       0: Player is not the champion yet
       1: Player is the champion, ready to meet their initial fans
       2: Player has met their initial fans
@@ -3245,7 +3233,7 @@ bool8 InPokemonCenter(void)
 void ResetFanClub(void)
 {
     gSaveBlock1Ptr->vars[VAR_FANCLUB_FAN_COUNTER - VARS_START] = 0;
-    gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] = 0;
+    gSaveBlock1Ptr->vars[VAR_SINK - VARS_START] = 0;
 }
 
 void TryLoseFansFromPlayTimeAfterLinkBattle(void)
@@ -3253,7 +3241,7 @@ void TryLoseFansFromPlayTimeAfterLinkBattle(void)
     if (DidPlayerGetFirstFans())
     {
         TryLoseFansFromPlayTime();
-        gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] = gSaveBlock2Ptr->playTimeHours;
+        gSaveBlock1Ptr->vars[VAR_SINK - VARS_START] = gSaveBlock2Ptr->playTimeHours;
     }
 }
 
@@ -3270,7 +3258,7 @@ u8 TryGainNewFanFromCounter(u8 incrementId)
         [FANCOUNTER_USED_BATTLE_TOWER] = 1
     };
 
-    if (VarGet(VAR_LILYCOVE_FAN_CLUB_STATE) == 2)
+    if (VarGet(VAR_SINK) == 2)
     {
         if (GET_TRAINER_FAN_CLUB_COUNTER + sCounterIncrements[incrementId] > 19)
         {
@@ -3397,19 +3385,19 @@ void TryLoseFansFromPlayTime(void)
         {
             if (GetNumFansOfPlayerInTrainerFanClub() < 5)
             {
-                gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] = gSaveBlock2Ptr->playTimeHours;
+                gSaveBlock1Ptr->vars[VAR_SINK - VARS_START] = gSaveBlock2Ptr->playTimeHours;
                 break;
             }
             else if (i == NUM_TRAINER_FAN_CLUB_MEMBERS)
             {
                 break;
             }
-            else if (gSaveBlock2Ptr->playTimeHours - gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] < 12)
+            else if (gSaveBlock2Ptr->playTimeHours - gSaveBlock1Ptr->vars[VAR_SINK - VARS_START] < 12)
             {
                 return;
             }
             PlayerLoseRandomTrainerFan();
-            gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] += 12;
+            gSaveBlock1Ptr->vars[VAR_SINK - VARS_START] += 12;
             i++;
         }
     }
@@ -3537,7 +3525,7 @@ static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer)
 
 void UpdateTrainerFansAfterLinkBattle(void)
 {
-    if (VarGet(VAR_LILYCOVE_FAN_CLUB_STATE) == 2)
+    if (VarGet(VAR_SINK) == 2)
     {
         TryLoseFansFromPlayTimeAfterLinkBattle();
         if (gBattleOutcome == B_OUTCOME_WON)

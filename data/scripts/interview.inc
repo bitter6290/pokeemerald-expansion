@@ -296,7 +296,7 @@ BattleFrontier_BattleTowerLobby_EventScript_AlreadyInterviewed::
 	end
 
 BattleFrontier_BattleTowerLobby_EventScript_ShowOrHideReporter::
-	goto_if_eq VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0, BattleFrontier_BattleTowerLobby_EventScript_HideReporter
+	goto_if_eq VAR_SINK, 0, BattleFrontier_BattleTowerLobby_EventScript_HideReporter
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_BATTLE_TOWER_PROFILE
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_BattleTowerLobby_EventScript_HideReporter
