@@ -24,9 +24,9 @@ Debug_CheatStart::
 	additem ITEM_ACRO_BIKE
 	setvar VAR_BRINEY_HOUSE_STATE, 1
 	setvar VAR_ROUTE116_STATE, 2
-	setflag FLAG_HIDE_ROUTE_116_MR_BRINEY
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setflag FLAG_SINK
+	clearflag FLAG_SINK
+	clearflag FLAG_SINK
 	release
 	end
 

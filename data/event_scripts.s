@@ -186,10 +186,10 @@ EventScript_WhiteOut::
 	end
 
 EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
-	clearflag FLAG_DEFEATED_ELITE_4_SIDNEY
-	clearflag FLAG_DEFEATED_ELITE_4_PHOEBE
-	clearflag FLAG_DEFEATED_ELITE_4_GLACIA
-	clearflag FLAG_DEFEATED_ELITE_4_DRAKE
+	clearflag FLAG_SINK
+	clearflag FLAG_SINK
+	clearflag FLAG_SINK
+	clearflag FLAG_SINK
 	setvar VAR_ELITE_4_STATE, 0
 	return
 
@@ -215,8 +215,8 @@ Common_ShowEasyChatScreen::
 	return
 
 Common_EventScript_ReadyPetalburgGymForBattle::
-	clearflag FLAG_HIDE_PETALBURG_GYM_GREETER
-	setflag FLAG_PETALBURG_MART_EXPANDED_ITEMS
+	clearflag FLAG_SINK
+	setflag FLAG_SINK
 	return
 
 Common_EventScript_BufferTrendyPhrase::
@@ -529,7 +529,7 @@ LittlerootTown_MaysHouse_2F_EventScript_WallClock::
 	end
 	
 PlayersHouse_2F_EventScript_WallClock::
-	goto_if_set FLAG_SET_WALL_CLOCK, PlayersHouse_2F_EventScript_CheckWallClock
+	goto_if_set FLAG_SINK, PlayersHouse_2F_EventScript_CheckWallClock
 	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
 	delay 30

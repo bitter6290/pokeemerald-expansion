@@ -11,13 +11,13 @@ EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL
+	clearflag FLAG_SINK
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 3
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 3
-	clearflag FLAG_HIDE_PLAYERS_HOUSE_DAD
+	clearflag FLAG_SINK
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent::
