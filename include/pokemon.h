@@ -380,6 +380,11 @@ struct FormChange
     u16 param3;
 };
 
+struct TrainerEVSpread {
+	u8 EVs[6];
+	u8 nature;
+};
+
 #define NUM_UNOWN_FORMS 28
 
 #define GET_UNOWN_LETTER(personality) ((   \
@@ -398,6 +403,8 @@ extern struct Pokemon gEnemyParty[PARTY_SIZE];
 extern struct SpriteTemplate gMultiuseSpriteTemplate;
 
 extern const struct BattleMove gBattleMoves[];
+extern const struct TrainerEVSpread gEvSets[];
+extern const u8 gIvSets[][6];
 extern const u8 gFacilityClassToPicIndex[];
 extern const u8 gFacilityClassToTrainerClass[];
 extern const struct SpeciesInfo gSpeciesInfo[];
