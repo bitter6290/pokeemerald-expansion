@@ -854,6 +854,8 @@ gBattleAnims_Moves::
 	.4byte Move_NOXIOUS_TORQUE
 	.4byte Move_COMBAT_TORQUE
 	.4byte Move_MAGICAL_TORQUE
+	.4byte Move_PSYBLADE
+	.4byte Move_HYDRO_STEAM
 @@@@ Custom
 	.4byte Move_ROCKY_TERRAIN
 	.4byte Move_DARK_TERRAIN
@@ -14473,6 +14475,8 @@ Move_WICKED_TORQUE::
 Move_NOXIOUS_TORQUE::
 Move_COMBAT_TORQUE::
 Move_MAGICAL_TORQUE::
+Move_PSYBLADE::
+Move_HYDRO_STEAM::
 	end @to do
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@

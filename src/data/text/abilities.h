@@ -293,7 +293,8 @@ static const u8 sAstralLockDescription[] = _("Negates terrain.");
 static const u8 sFireCoreDescription[] = _("All Fire moves use Attack.");
 static const u8 sAccelerateDescription[] = _("Shortens field effects.");
 static const u8 sStasisDescription[] = _("Lengthens field effects.");
-static const u8 sSnowForceDescription[] = _("Powers up in snow.");
+static const u8 sMountainForceDescription[] = _("Powers up Ice in snow.");
+static const u8 sInsulatingSkinDescription[] = _("Electric hits power up Fire.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -605,7 +606,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRE_CORE] = _("Fire Core"),
     [ABILITY_STASIS] = _("Stasis"),
     [ABILITY_ACCELERATE] = _("Accelerate"),
-    [ABILITY_SNOW_FORCE] = _("Snow Force"),
+    [ABILITY_SNOW_FORCE] = _("Mountain Force"),
+    [ABILITY_INSULATING_SKIN] = _("Insulating Skin"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -917,7 +919,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRE_CORE] = _("Fire Core"),
     [ABILITY_ACCELERATE] = _("Accelerate"),
     [ABILITY_STASIS] = _("Stasis"),
-    [ABILITY_SNOW_FORCE] = _("Snow Force"),
+    [ABILITY_SNOW_FORCE] = _("Mtn. Force"),
+    [ABILITY_INSULATING_SKIN] = _("InslatngSkin"),
 };
 #endif
 
@@ -1230,5 +1233,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_FIRE_CORE] = sFireCoreDescription,
     [ABILITY_ACCELERATE] = sAccelerateDescription,
     [ABILITY_STASIS] = sStasisDescription,
-    [ABILITY_SNOW_FORCE] = sSnowForceDescription,
+    [ABILITY_SNOW_FORCE] = sMountainForceDescription,
+    [ABILITY_INSULATING_SKIN] = sInsulatingSkinDescription,
 };

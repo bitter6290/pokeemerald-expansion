@@ -24752,7 +24752,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
 		.eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_VOLT_ABSORB, ABILITY_INTIMIDATE, ABILITY_GUTS},
+            .abilities = {ABILITY_INSULATING_SKIN, ABILITY_INTIMIDATE, ABILITY_GUTS},
         #else
             .abilities = {ABILITY_NONE, ABILITY_INTIMIDATE, ABILITY_GUTS},
         #endif
@@ -24777,7 +24777,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
 		.eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_VOLT_ABSORB, ABILITY_INTIMIDATE, ABILITY_GUTS},
+            .abilities = {ABILITY_INSULATING_SKIN, ABILITY_INTIMIDATE, ABILITY_GUTS},
         #else
             .abilities = {ABILITY_NONE, ABILITY_INTIMIDATE, ABILITY_GUTS},
         #endif
@@ -24803,7 +24803,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
 		.eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_VOLT_ABSORB, ABILITY_INTIMIDATE, ABILITY_GUTS},
+            .abilities = {ABILITY_INSULATING_SKIN, ABILITY_INTIMIDATE, ABILITY_GUTS},
         #else
             .abilities = {ABILITY_NONE, ABILITY_INTIMIDATE, ABILITY_GUTS},
         #endif

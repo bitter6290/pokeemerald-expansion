@@ -399,9 +399,11 @@
 #define EFFECT_TEATIME                      393
 #define EFFECT_ATTACK_UP_USER_ALLY          394 // Howl 8th Gen
 #define EFFECT_SHELL_TRAP                   395
+#define EFFECT_PSYBLADE                     396
+#define EFFECT_HYDRO_STEAM                  397
 
 //Custom
-#define CUSTOM_BM_EFFECTS					EFFECT_SHELL_TRAP
+#define CUSTOM_BM_EFFECTS					EFFECT_HYDRO_STEAM
 
 #define EFFECT_ROCKY_TERRAIN				CUSTOM_BM_EFFECTS + 1
 #define EFFECT_DARK_TERRAIN					CUSTOM_BM_EFFECTS + 2
