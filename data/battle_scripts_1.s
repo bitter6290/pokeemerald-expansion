@@ -418,6 +418,9 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectTeatime                 @ EFFECT_TEATIME
 	.4byte BattleScript_EffectAttackUpUserAlly        @ EFFECT_ATTACK_UP_USER_ALLY
 	.4byte BattleScript_EffectShellTrap				  @ EFFECT_SHELL_TRAP
+	.4byte BattleScript_EffectHit                     @ EFFECT_PSYBLADE
+	.4byte BattleScript_EffectHit                     @ EFFECT_HYDRO_STEAM
+@@@ Custom
 	.4byte BattleScript_EffectRockyTerrain			  @ EFFECT_ROCKY_TERRAIN
 	.4byte BattleScript_EffectDarkTerrain			  @ EFFECT_DARK_TERRAIN
 	.4byte BattleScript_EffectAttackerSpdDownHit	  @ EFFECT_ATTACKER_SPD_DOWN_HIT
