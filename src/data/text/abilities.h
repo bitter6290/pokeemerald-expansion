@@ -294,7 +294,7 @@ static const u8 sFireCoreDescription[] = _("All Fire moves use Attack.");
 static const u8 sAccelerateDescription[] = _("Shortens field effects.");
 static const u8 sStasisDescription[] = _("Lengthens field effects.");
 static const u8 sMountainForceDescription[] = _("Powers up Ice in snow.");
-static const u8 sInsulatingSkinDescription[] = _("Electric hits power up Fire.")
+static const u8 sInsulatingSkinDescription[] = _("Electric hits power up Fire.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
