@@ -607,6 +607,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_STASIS] = _("Stasis"),
     [ABILITY_ACCELERATE] = _("Accelerate"),
     [ABILITY_SNOW_FORCE] = _("Mountain Force"),
+    [ABILITY_INSULATING_SKIN] = _("Insulating Skin"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -918,7 +919,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRE_CORE] = _("Fire Core"),
     [ABILITY_ACCELERATE] = _("Accelerate"),
     [ABILITY_STASIS] = _("Stasis"),
-    [ABILITY_SNOW_FORCE] = _("Mtn Force"),
+    [ABILITY_SNOW_FORCE] = _("Mtn. Force"),
+    [ABILITY_INSULATING_SKIN] = _("InslatngSkin"),
 };
 #endif
 
