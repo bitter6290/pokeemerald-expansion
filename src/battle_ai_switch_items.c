@@ -1085,7 +1085,7 @@ static bool8 ShouldUseItem(void)
         item = gBattleResources->battleHistory->trainerItems[i];
         if (item == ITEM_NONE)
             continue;
-        if (gItemEffectTable[item - ITEM_POTION] == NULL)
+        if (gItemEffectTable[item] == NULL)
             continue;
 
         if (item == ITEM_ENIGMA_BERRY_E_READER)
@@ -1095,7 +1095,7 @@ static bool8 ShouldUseItem(void)
             itemEffects = 0;
             #endif
         else
-            itemEffects = gItemEffectTable[item - ITEM_POTION];
+            itemEffects = gItemEffectTable[item];
 
         *(gBattleStruct->AI_itemType + gActiveBattler / 2) = GetAI_ItemType(item, itemEffects);
 
