@@ -121,6 +121,10 @@
 #define MAP_TRAINER_HILL_ROOF                               (59 | (1 << 8))
 #define MAP_TRAINER_HILL_ELEVATOR                           (60 | (1 << 8))
 
-#define MAP_GROUPS_COUNT 2
+// gMapGroup_CinderTown
+#define MAP_CINDER_TOWN              (0 | (2 << 8))
+#define MAP_CINDER_ACCESS_TUNNEL_END (1 | (2 << 8))
+
+#define MAP_GROUPS_COUNT 3
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

@@ -1070,6 +1070,26 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/Mart/border.bin",
       "blockdata_filepath": "data/layouts/Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_CINDER_TOWN",
+      "name": "CinderTown_Layout",
+      "width": 30,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CinderTown/border.bin",
+      "blockdata_filepath": "data/layouts/CinderTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_CINDER_ACCESS_TUNNEL_END",
+      "name": "CinderAccessTunnelEnd_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CinderAccessTunnelEnd/border.bin",
+      "blockdata_filepath": "data/layouts/CinderAccessTunnelEnd/map.bin"
     }
   ]
 }

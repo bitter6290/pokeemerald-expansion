@@ -1,0 +1,32 @@
+static const struct TrainerMonItemCustomMoves sParty_EvoTest[] = {
+	{
+	.iv = 0,
+	.lvl = 10,
+	.species = SPECIES_BULBASAUR,
+	.heldItem = ITEM_NONE,
+	.ability = 0,
+	.spreadEv = SPREAD_FAST_PHYSICAL_SWEEPER_A,
+	.spreadIv = SPREAD_31_IV,
+	.moves = {MOVE_RAZOR_LEAF, MOVE_SLUDGE_BOMB, MOVE_NONE, MOVE_NONE},
+	},
+	{
+	.iv = 0,
+	.lvl = 18,
+	.species = SPECIES_BULBASAUR,
+	.heldItem = ITEM_NONE,
+	.ability = 0,
+	.spreadEv = SPREAD_FAST_SPECIAL_SWEEPER_A,
+	.spreadIv = SPREAD_HP_FIRE,
+	.moves = {MOVE_RAZOR_LEAF, MOVE_SLUDGE_BOMB, MOVE_HIDDEN_POWER, MOVE_NONE},
+	},
+	{
+	.iv = 0,
+	.lvl = 40,
+	.species = SPECIES_BULBASAUR,
+	.heldItem = ITEM_NONE,
+	.ability = 0,
+	.spreadEv = SPREAD_SLOW_SPATK,
+	.spreadIv = SPREAD_HP_WATER,
+	.moves = {MOVE_RAZOR_LEAF, MOVE_ICE_BEAM, MOVE_HIDDEN_POWER, MOVE_CHARGE_BEAM},
+	},
+};

@@ -232,7 +232,6 @@ EventScript_BackupMrBrineyLocation::
 
 	.include "data/scripts/surf.inc"
 	.include "data/scripts/rival_graphics.inc"
-	.include "data/scripts/set_gym_trainers.inc"
 
 Common_EventScript_ShowBagIsFull::
 	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
@@ -611,3 +610,7 @@ Common_Text_LookCloserAtMap:
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/CinderTown/scripts.inc"
+
+	.include "data/maps/CinderAccessTunnelEnd/scripts.inc"

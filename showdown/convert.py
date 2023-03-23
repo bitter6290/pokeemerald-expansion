@@ -125,6 +125,9 @@ def convertSets(path):
                sets[curSet]["party"][curMon]["name"] = sets[curSet]["party"][curMon]["name"] + 'AN'
             elif(sets[curSet]["party"][curMon]["name"][len(sets[curSet]["party"][curMon]["name"])-6:] == "PALDEA"):
                sets[curSet]["party"][curMon]["name"] = sets[curSet]["party"][curMon]["name"] + 'N'
+            curEvs = [0,0,0,0,0,0]
+            curIvs = [31,31,31,31,31,31]
+            curNature = ""
             if i[firstNameEnd+1] not in ["@","("]:
                 step += 1
                 continue
@@ -134,9 +137,6 @@ def convertSets(path):
             while i[itemEnd:itemEnd+2] != '\n':
                 itemEnd += 1
             sets[curSet]["party"][curMon]["item"] = "ITEM_"+i[firstNameEnd+3:itemEnd-2].upper().replace(' ','_').replace('-','_')
-            curEvs = [0,0,0,0,0,0]
-            curIvs = [31,31,31,31,31,31]
-            curNature = ""
             step += 1
             continue
         if step == 1:
@@ -152,6 +152,7 @@ def convertSets(path):
                 continue
         if step == 2:
             if(i[0] != 'L'):
+                sets[curSet]["party"][curMon]["level"] = 100
                 step += 1
             else:
                 sets[curSet]["party"][curMon]["level"] = i[7:len(i)-1]
@@ -160,6 +161,8 @@ def convertSets(path):
                 step += 1
                 continue
         if step == 3:
+            if(i[0:4] == 'Tera'):
+                continue
             if(i[0] != 'E'):
                sets[curSet]["party"][curMon]["spreadIv"] = "SPREAD_16_IV"
                sets[curSet]["party"][curMon]["spreadEv"] = "SPREAD_80_EV"

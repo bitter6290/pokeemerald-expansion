@@ -1,0 +1,8 @@
+mapscripts CinderTown_MapScripts {}
+
+
+script EventScript_EvoTest{
+	trainerbattle_single(TRAINER_EVO_TEST,format("Testing..."),format("Tested!"))
+	msgbox(format("Hello."), MSGBOX_AUTOCLOSE)
+	end
+}
